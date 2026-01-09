@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대한민국 조선소·항만·도크 인터랙티브 지도</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Leaflet MarkerCluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+        }
+        
+        #map {
+            width: 100%;
+            height: calc(100vh - 60px);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .header-info {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        /* 범례 스타일 */
+        .legend {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        
+        .legend h4 {
+            margin-bottom: 10px;
+            color: #1a237e;
+            font-size: 14px;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 5px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        
+        .legend-icon {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        /* 레이어 컨트롤 */
+        .layer-control {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            font-size: 13px;
+        }
+        
+        .layer-control h4 {
+            margin-bottom: 10px;
+            color: #1a237e;
+            font-size: 14px;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 5px;
+        }
+        
+        .layer-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+        
+        .layer-item input {
+            margin-right: 8px;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+        }
+        
+        .layer-item label {
+            cursor: pointer;
+        }
+        
+        /* 팝업 스타일 */
+        .custom-popup .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+        }
+        
+        .popup-content {
+            font-size: 13px;
+            line-height: 1.6;
+            min-width: 200px;
+        }
+        
+        .popup-content h3 {
+            color: #1a237e;
+            font-size: 15px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+        
+        .popup-content .info-row {
+            display: flex;
+            margin: 5px 0;
+        }
+        
+        .popup-content .info-label {
+            font-weight: 600;
+            color: #555;
+            width: 60px;
+            flex-shrink: 0;
+        }
+        
+        .popup-content .info-value {
+            color: #333;
+        }
+        
+        .popup-content .category-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            color: white;
+            margin-top: 5px;
+        }
+        
+        .badge-shipyard-large { background: #d32f2f; }
+        .badge-shipyard-small { background: #e57373; }
+        .badge-port-trade { background: #1976d2; }
+        .badge-port-coastal { background: #64b5f6; }
+        .badge-dock { background: #388e3c; }
+        
+        /* 통계 패널 */
+        .stats-panel {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            font-size: 12px;
+        }
+        
+        .stats-panel h4 {
+            margin-bottom: 10px;
+            color: #1a237e;
+            font-size: 14px;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 5px;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            padding: 3px 0;
+        }
+        
+        .stat-value {
+            font-weight: 600;
+            color: #1a237e;
+        }
+        
+        /* 검색 패널 */
+        .search-panel {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+        
+        .search-panel input {
+            width: 180px;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 13px;
+            outline: none;
+        }
+        
+        .search-panel input:focus {
+            border-color: #1a237e;
+        }
+        
+        /* 마커 아이콘 스타일 */
+        .custom-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚢 대한민국 조선소·항만·도크 인터랙티브 지도</h1>
+        <div class="header-info">총 45개 시설 | OpenStreetMap 기반 | 2025년 1월 기준</div>
+    </div>
+    
+    <div id="map"></div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Leaflet MarkerCluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    
+    <script>
+        // ============================================
+        // 대한민국 조선소·항만·도크 데이터
+        // ============================================
+        const facilitiesData = [
+            // 대형 조선소
+            { id: 1, name: "HD현대중공업 울산조선소", category: "조선소", subcategory: "대형", region: "울산광역시", city: "동구", lat: 35.5089, lng: 129.4208, note: "세계 최대 단일 조선소/드라이도크 9기 보유" },
+            { id: 2, name: "삼성중공업 거제조선소", category: "조선소", subcategory: "대형", region: "경상남도", city: "거제시", lat: 34.8847, lng: 128.6339, note: "3개 도크 보유/세계적 규모 3도크(640m×97.5m)" },
+            { id: 3, name: "한화오션 거제조선소", category: "조선소", subcategory: "대형", region: "경상남도", city: "거제시", lat: 34.8564, lng: 128.7089, note: "구 대우조선해양/옥포조선소" },
+            { id: 4, name: "HD현대삼호 영암조선소", category: "조선소", subcategory: "대형", region: "전라남도", city: "영암군", lat: 34.7689, lng: 126.4156, note: "초대형 도크 2기 보유/LNG추진선 전문" },
+            { id: 5, name: "HD현대미포 울산조선소", category: "조선소", subcategory: "대형", region: "울산광역시", city: "동구", lat: 35.4917, lng: 129.4197, note: "도크 4기/중형선 세계1위" },
+            
+            // 중소 조선소
+            { id: 6, name: "케이조선 진해조선소", category: "조선소", subcategory: "중소", region: "경상남도", city: "창원시", lat: 35.0847, lng: 128.7139, note: "구 STX조선해양/탱커·LNG벙커선 특화" },
+            { id: 7, name: "HJ중공업 영도조선소", category: "조선소", subcategory: "중소", region: "부산광역시", city: "영도구", lat: 35.0764, lng: 129.0478, note: "국내 최초 조선소(1937년)/함정건조 명가" },
+            { id: 8, name: "대선조선 영도조선소", category: "조선소", subcategory: "중소", region: "부산광역시", city: "영도구", lat: 35.0742, lng: 129.0514, note: "중소형 선박 건조/카페리 전문" },
+            { id: 9, name: "대한조선 해남조선소", category: "조선소", subcategory: "중소", region: "전라남도", city: "해남군", lat: 34.5789, lng: 126.4678, note: "중형 조선소 1위/아프라막스 유조선 전문" },
+            { id: 10, name: "HSG성동조선 통영조선소", category: "조선소", subcategory: "중소", region: "경상남도", city: "통영시", lat: 34.8356, lng: 128.3928, note: "구 성동조선해양/육상건조 특화" },
+            { id: 11, name: "SK오션플랜트 고성조선소", category: "조선소", subcategory: "중소", region: "경상남도", city: "고성군", lat: 34.9178, lng: 128.3067, note: "구 삼강엠앤티/해양플랜트" },
+            { id: 12, name: "HD현대중공업 군산조선소", category: "조선소", subcategory: "중소", region: "전라북도", city: "군산시", lat: 35.9547, lng: 126.6947, note: "2023년 재가동/블록 생산" },
+            
+            // 무역항
+            { id: 13, name: "부산항 북항", category: "항만", subcategory: "무역항", region: "부산광역시", city: "중구", lat: 35.1028, lng: 129.0369, note: "대한민국 최대 항만" },
+            { id: 14, name: "부산항 신항", category: "항만", subcategory: "무역항", region: "부산광역시", city: "강서구", lat: 35.0756, lng: 128.8514, note: "세계 5위 컨테이너항" },
+            { id: 15, name: "인천항", category: "항만", subcategory: "무역항", region: "인천광역시", city: "중구", lat: 37.4519, lng: 126.6031, note: "수도권 관문항" },
+            { id: 16, name: "울산항", category: "항만", subcategory: "무역항", region: "울산광역시", city: "남구", lat: 35.5008, lng: 129.4028, note: "석유화학 중심 항만" },
+            { id: 17, name: "광양항", category: "항만", subcategory: "무역항", region: "전라남도", city: "광양시", lat: 34.9108, lng: 127.6939, note: "제철/컨테이너 복합항" },
+            { id: 18, name: "평택·당진항", category: "항만", subcategory: "무역항", region: "경기도", city: "평택시", lat: 36.9778, lng: 126.8231, note: "중국 교역 중심항" },
+            { id: 19, name: "목포항", category: "항만", subcategory: "무역항", region: "전라남도", city: "목포시", lat: 34.7847, lng: 126.3756, note: "서남권 관문항" },
+            { id: 20, name: "여수·광양항", category: "항만", subcategory: "무역항", region: "전라남도", city: "여수시", lat: 34.7428, lng: 127.7478, note: "석유화학 물류 중심" },
+            { id: 21, name: "마산항", category: "항만", subcategory: "무역항", region: "경상남도", city: "창원시", lat: 35.1839, lng: 128.5694, note: "경남권 무역항" },
+            { id: 22, name: "포항항", category: "항만", subcategory: "무역항", region: "경상북도", city: "포항시", lat: 36.0219, lng: 129.3847, note: "제철 지원항" },
+            { id: 23, name: "동해·묵호항", category: "항만", subcategory: "무역항", region: "강원도", city: "동해시", lat: 37.5247, lng: 129.1147, note: "석탄·시멘트 물류" },
+            { id: 24, name: "군산항", category: "항만", subcategory: "무역항", region: "전라북도", city: "군산시", lat: 35.9789, lng: 126.7108, note: "새만금 연계항" },
+            { id: 25, name: "대산항", category: "항만", subcategory: "무역항", region: "충청남도", city: "서산시", lat: 36.9847, lng: 126.3528, note: "석유화학 전용항" },
+            
+            // 도크
+            { id: 26, name: "HD현대중공업 1도크", category: "도크", subcategory: "건도크", region: "울산광역시", city: "동구", lat: 35.5067, lng: 129.4189, note: "VLCC급 건조가능 [추정좌표]" },
+            { id: 27, name: "HD현대중공업 해양도크", category: "도크", subcategory: "건도크", region: "울산광역시", city: "동구", lat: 35.5142, lng: 129.4267, note: "해양플랜트 전용 [추정좌표]" },
+            { id: 28, name: "삼성중공업 1도크", category: "도크", subcategory: "건도크", region: "경상남도", city: "거제시", lat: 34.8867, lng: 128.6319, note: "대형 컨테이너선 [추정좌표]" },
+            { id: 29, name: "삼성중공업 2도크", category: "도크", subcategory: "건도크", region: "경상남도", city: "거제시", lat: 34.8847, lng: 128.6339, note: "LNG선 건조 [추정좌표]" },
+            { id: 30, name: "삼성중공업 3도크", category: "도크", subcategory: "건도크", region: "경상남도", city: "거제시", lat: 34.8827, lng: 128.6359, note: "세계적 규모(640m×97.5m) [추정좌표]" },
+            { id: 31, name: "한화오션 1도크", category: "도크", subcategory: "건도크", region: "경상남도", city: "거제시", lat: 34.8544, lng: 128.7069, note: "대형선 건조(530m×130m) [추정좌표]" },
+            { id: 32, name: "한화오션 수리도크", category: "도크", subcategory: "건도크", region: "경상남도", city: "거제시", lat: 34.8584, lng: 128.7109, note: "30만톤급 수리용 [추정좌표]" },
+            { id: 33, name: "HD현대삼호 1도크", category: "도크", subcategory: "건도크", region: "전라남도", city: "영암군", lat: 34.7669, lng: 126.4136, note: "초대형 도크 [추정좌표]" },
+            { id: 34, name: "HD현대삼호 2도크", category: "도크", subcategory: "건도크", region: "전라남도", city: "영암군", lat: 34.7709, lng: 126.4176, note: "초대형 도크 [추정좌표]" },
+            { id: 35, name: "HD현대미포 1도크", category: "도크", subcategory: "건도크", region: "울산광역시", city: "동구", lat: 35.4897, lng: 129.4177, note: "380m×65m [추정좌표]" },
+            { id: 36, name: "HD현대미포 2도크", category: "도크", subcategory: "건도크", region: "울산광역시", city: "동구", lat: 35.4917, lng: 129.4197, note: "380m×65m [추정좌표]" },
+            { id: 37, name: "HD현대미포 3도크", category: "도크", subcategory: "건도크", region: "울산광역시", city: "동구", lat: 35.4937, lng: 129.4217, note: "380m×65m [추정좌표]" },
+            
+            // 연안항
+            { id: 38, name: "감천항", category: "항만", subcategory: "연안항", region: "부산광역시", city: "사하구", lat: 35.0728, lng: 128.9839, note: "연안 어항" },
+            { id: 39, name: "장생포항", category: "항만", subcategory: "연안항", region: "울산광역시", city: "남구", lat: 35.4928, lng: 129.3847, note: "과거 포경 중심지" },
+            { id: 40, name: "온산항", category: "항만", subcategory: "연안항", region: "울산광역시", city: "울주군", lat: 35.4347, lng: 129.3628, note: "석유화학 지원항" },
+            { id: 41, name: "진해항", category: "항만", subcategory: "연안항", region: "경상남도", city: "창원시", lat: 35.1147, lng: 128.6778, note: "해군작전사령부 인근" },
+            { id: 42, name: "통영항", category: "항만", subcategory: "연안항", region: "경상남도", city: "통영시", lat: 34.8428, lng: 128.4228, note: "수산물 중심" },
+            { id: 43, name: "삼천포항", category: "항만", subcategory: "연안항", region: "경상남도", city: "사천시", lat: 34.9247, lng: 128.0678, note: "연안 어항" },
+            { id: 44, name: "속초항", category: "항만", subcategory: "연안항", region: "강원도", city: "속초시", lat: 38.2078, lng: 128.5947, note: "동해안 관광항" },
+            { id: 45, name: "대포항", category: "항만", subcategory: "연안항", region: "강원도", city: "강릉시", lat: 37.7928, lng: 128.9128, note: "동해안 어항" }
+        ];
+        
+        // ============================================
+        // 색상 및 아이콘 설정
+        // ============================================
+        const colorScheme = {
+            "조선소-대형": "#d32f2f",
+            "조선소-중소": "#e57373",
+            "항만-무역항": "#1976d2",
+            "항만-연안항": "#64b5f6",
+            "도크-건도크": "#388e3c",
+            "도크-부유도크": "#81c784"
+        };
+        
+        function getColor(category, subcategory) {
+            return colorScheme[`${category}-${subcategory}`] || "#757575";
+        }
+        
+        function createCustomIcon(category, subcategory) {
+            const color = getColor(category, subcategory);
+            const size = category === "도크" ? 10 : (subcategory === "대형" || subcategory === "무역항" ? 16 : 12);
+            
+            return L.divIcon({
+                className: 'custom-div-icon',
+                html: `<div style="
+                    background-color: ${color};
+                    width: ${size}px;
+                    height: ${size}px;
+                    border-radius: 50%;
+                    border: 2px solid white;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+                "></div>`,
+                iconSize: [size, size],
+                iconAnchor: [size/2, size/2]
+            });
+        }
+        
+        // ============================================
+        // 지도 초기화
+        // ============================================
+        const map = L.map('map', {
+            center: [36.0, 127.5],
+            zoom: 7,
+            minZoom: 6,
+            maxZoom: 18
+        });
+        
+        // 베이스맵 레이어
+        const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        });
+        
+        const cartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        });
+        
+        const cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        });
+        
+        // 기본 레이어 추가
+        cartoLight.addTo(map);
+        
+        // ============================================
+        // 마커 레이어 그룹 생성
+        // ============================================
+        const shipyardLargeLayer = L.layerGroup();
+        const shipyardSmallLayer = L.layerGroup();
+        const portTradeLayer = L.layerGroup();
+        const portCoastalLayer = L.layerGroup();
+        const dockLayer = L.layerGroup();
+        
+        // 데이터를 레이어에 추가
+        facilitiesData.forEach(facility => {
+            const marker = L.marker([facility.lat, facility.lng], {
+                icon: createCustomIcon(facility.category, facility.subcategory)
+            });
+            
+            // 팝업 내용 생성
+            const badgeClass = facility.category === "조선소" ? 
+                (facility.subcategory === "대형" ? "badge-shipyard-large" : "badge-shipyard-small") :
+                facility.category === "항만" ?
+                (facility.subcategory === "무역항" ? "badge-port-trade" : "badge-port-coastal") :
+                "badge-dock";
+            
+            const popupContent = `
+                <div class="popup-content">
+                    <h3>${facility.name}</h3>
+                    <div class="info-row">
+                        <span class="info-label">구분</span>
+                        <span class="info-value">
+                            <span class="category-badge ${badgeClass}">${facility.category} - ${facility.subcategory}</span>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">지역</span>
+                        <span class="info-value">${facility.region} ${facility.city}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">좌표</span>
+                        <span class="info-value">${facility.lat.toFixed(4)}, ${facility.lng.toFixed(4)}</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">비고</span>
+                        <span class="info-value">${facility.note}</span>
+                    </div>
+                </div>
+            `;
+            
+            marker.bindPopup(popupContent, { className: 'custom-popup', maxWidth: 300 });
+            
+            // 레이어 분류
+            if (facility.category === "조선소" && facility.subcategory === "대형") {
+                shipyardLargeLayer.addLayer(marker);
+            } else if (facility.category === "조선소" && facility.subcategory === "중소") {
+                shipyardSmallLayer.addLayer(marker);
+            } else if (facility.category === "항만" && facility.subcategory === "무역항") {
+                portTradeLayer.addLayer(marker);
+            } else if (facility.category === "항만" && facility.subcategory === "연안항") {
+                portCoastalLayer.addLayer(marker);
+            } else if (facility.category === "도크") {
+                dockLayer.addLayer(marker);
+            }
+        });
+        
+        // 기본으로 모든 레이어 표시
+        shipyardLargeLayer.addTo(map);
+        shipyardSmallLayer.addTo(map);
+        portTradeLayer.addTo(map);
+        portCoastalLayer.addTo(map);
+        dockLayer.addTo(map);
+        
+        // ============================================
+        // 레이어 컨트롤 패널
+        // ============================================
+        const layerControl = L.control({ position: 'topright' });
+        layerControl.onAdd = function(map) {
+            const div = L.DomUtil.create('div', 'layer-control');
+            div.innerHTML = `
+                <h4>🗂️ 레이어 선택</h4>
+                <div class="layer-item">
+                    <input type="checkbox" id="layer-shipyard-large" checked>
+                    <label for="layer-shipyard-large">
+                        <span class="legend-icon" style="background:#d32f2f; display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:5px;"></span>
+                        대형 조선소 (${facilitiesData.filter(f => f.category === "조선소" && f.subcategory === "대형").length})
+                    </label>
+                </div>
+                <div class="layer-item">
+                    <input type="checkbox" id="layer-shipyard-small" checked>
+                    <label for="layer-shipyard-small">
+                        <span class="legend-icon" style="background:#e57373; display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:5px;"></span>
+                        중소 조선소 (${facilitiesData.filter(f => f.category === "조선소" && f.subcategory === "중소").length})
+                    </label>
+                </div>
+                <div class="layer-item">
+                    <input type="checkbox" id="layer-port-trade" checked>
+                    <label for="layer-port-trade">
+                        <span class="legend-icon" style="background:#1976d2; display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:5px;"></span>
+                        무역항 (${facilitiesData.filter(f => f.category === "항만" && f.subcategory === "무역항").length})
+                    </label>
+                </div>
+                <div class="layer-item">
+                    <input type="checkbox" id="layer-port-coastal" checked>
+                    <label for="layer-port-coastal">
+                        <span class="legend-icon" style="background:#64b5f6; display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:5px;"></span>
+                        연안항 (${facilitiesData.filter(f => f.category === "항만" && f.subcategory === "연안항").length})
+                    </label>
+                </div>
+                <div class="layer-item">
+                    <input type="checkbox" id="layer-dock" checked>
+                    <label for="layer-dock">
+                        <span class="legend-icon" style="background:#388e3c; display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:5px;"></span>
+                        도크 (${facilitiesData.filter(f => f.category === "도크").length})
+                    </label>
+                </div>
+            `;
+            
+            // 이벤트 전파 방지
+            L.DomEvent.disableClickPropagation(div);
+            
+            return div;
+        };
+        layerControl.addTo(map);
+        
+        // 레이어 토글 이벤트
+        document.getElementById('layer-shipyard-large').addEventListener('change', function(e) {
+            e.target.checked ? map.addLayer(shipyardLargeLayer) : map.removeLayer(shipyardLargeLayer);
+        });
+        document.getElementById('layer-shipyard-small').addEventListener('change', function(e) {
+            e.target.checked ? map.addLayer(shipyardSmallLayer) : map.removeLayer(shipyardSmallLayer);
+        });
+        document.getElementById('layer-port-trade').addEventListener('change', function(e) {
+            e.target.checked ? map.addLayer(portTradeLayer) : map.removeLayer(portTradeLayer);
+        });
+        document.getElementById('layer-port-coastal').addEventListener('change', function(e) {
+            e.target.checked ? map.addLayer(portCoastalLayer) : map.removeLayer(portCoastalLayer);
+        });
+        document.getElementById('layer-dock').addEventListener('change', function(e) {
+            e.target.checked ? map.addLayer(dockLayer) : map.removeLayer(dockLayer);
+        });
+        
+        // ============================================
+        // 검색 패널
+        // ============================================
+        const searchControl = L.control({ position: 'topleft' });
+        searchControl.onAdd = function(map) {
+            const div = L.DomUtil.create('div', 'search-panel');
+            div.innerHTML = `<input type="text" id="search-input" placeholder="🔍 시설명 검색...">`;
+            L.DomEvent.disableClickPropagation(div);
+            return div;
+        };
+        searchControl.addTo(map);
+        
+        // 검색 기능
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            if (searchTerm.length < 2) return;
+            
+            const found = facilitiesData.find(f => f.name.toLowerCase().includes(searchTerm));
+            if (found) {
+                map.setView([found.lat, found.lng], 12);
+            }
+        });
+        
+        // ============================================
+        // 베이스맵 선택 컨트롤
+        // ============================================
+        const baseMaps = {
+            "밝은 지도": cartoLight,
+            "어두운 지도": cartoDark,
+            "OpenStreetMap": osmLayer
+        };
+        
+        L.control.layers(baseMaps, null, { position: 'bottomright' }).addTo(map);
+        
+        // ============================================
+        // 통계 패널
+        // ============================================
+        const statsControl = L.control({ position: 'bottomleft' });
+        statsControl.onAdd = function(map) {
+            const div = L.DomUtil.create('div', 'stats-panel');
+            
+            const shipyardCount = facilitiesData.filter(f => f.category === "조선소").length;
+            const portCount = facilitiesData.filter(f => f.category === "항만").length;
+            const dockCount = facilitiesData.filter(f => f.category === "도크").length;
+            
+            div.innerHTML = `
+                <h4>📊 시설 통계</h4>
+                <div class="stat-item">
+                    <span>전체 시설</span>
+                    <span class="stat-value">${facilitiesData.length}개</span>
+                </div>
+                <div class="stat-item">
+                    <span>조선소</span>
+                    <span class="stat-value">${shipyardCount}개</span>
+                </div>
+                <div class="stat-item">
+                    <span>항만</span>
+                    <span class="stat-value">${portCount}개</span>
+                </div>
+                <div class="stat-item">
+                    <span>도크</span>
+                    <span class="stat-value">${dockCount}개</span>
+                </div>
+            `;
+            
+            L.DomEvent.disableClickPropagation(div);
+            return div;
+        };
+        statsControl.addTo(map);
+        
+        // ============================================
+        // 스케일 바 추가
+        // ============================================
+        L.control.scale({ metric: true, imperial: false }).addTo(map);
+    </script>
+</body>
+</html>

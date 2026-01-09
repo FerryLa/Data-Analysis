@@ -1,0 +1,777 @@
+{
+  "type": "FeatureCollection",
+  "name": "korea_shipyard_port_dock",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "name": "HD현대중공업 울산조선소",
+        "category": "조선소",
+        "subcategory": "대형",
+        "region": "울산광역시",
+        "city": "동구",
+        "note": "세계 최대 단일 조선소/드라이도크 9기 보유",
+        "data_source": "공식 홈페이지/위키피디아"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.4208, 35.5089]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "name": "삼성중공업 거제조선소",
+        "category": "조선소",
+        "subcategory": "대형",
+        "region": "경상남도",
+        "city": "거제시",
+        "note": "3개 도크 보유/세계적 규모 3도크(640m×97.5m)",
+        "data_source": "공식 홈페이지/위키피디아"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.6339, 34.8847]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "name": "한화오션 거제조선소",
+        "category": "조선소",
+        "subcategory": "대형",
+        "region": "경상남도",
+        "city": "거제시",
+        "note": "구 대우조선해양/옥포조선소",
+        "data_source": "공식 홈페이지/위키피디아"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.7089, 34.8564]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "name": "HD현대삼호 영암조선소",
+        "category": "조선소",
+        "subcategory": "대형",
+        "region": "전라남도",
+        "city": "영암군",
+        "note": "초대형 도크 2기 보유/LNG추진선 전문",
+        "data_source": "공식 홈페이지/위키피디아"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.4156, 34.7689]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "name": "HD현대미포 울산조선소",
+        "category": "조선소",
+        "subcategory": "대형",
+        "region": "울산광역시",
+        "city": "동구",
+        "note": "도크 4기/중형선 세계1위",
+        "data_source": "공식 홈페이지"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.4197, 35.4917]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "name": "케이조선 진해조선소",
+        "category": "조선소",
+        "subcategory": "중소",
+        "region": "경상남도",
+        "city": "창원시",
+        "note": "구 STX조선해양/탱커·LNG벙커선 특화",
+        "data_source": "나무위키/언론보도"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.7139, 35.0847]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "name": "HJ중공업 영도조선소",
+        "category": "조선소",
+        "subcategory": "중소",
+        "region": "부산광역시",
+        "city": "영도구",
+        "note": "국내 최초 조선소(1937년)/함정건조 명가",
+        "data_source": "공식 홈페이지/위키피디아"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.0478, 35.0764]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "name": "대선조선 영도조선소",
+        "category": "조선소",
+        "subcategory": "중소",
+        "region": "부산광역시",
+        "city": "영도구",
+        "note": "중소형 선박 건조/카페리 전문",
+        "data_source": "공식 홈페이지/나무위키"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.0514, 35.0742]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "name": "대한조선 해남조선소",
+        "category": "조선소",
+        "subcategory": "중소",
+        "region": "전라남도",
+        "city": "해남군",
+        "note": "중형 조선소 1위/아프라막스 유조선 전문",
+        "data_source": "공식 홈페이지/나무위키"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.4678, 34.5789]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "name": "HSG성동조선 통영조선소",
+        "category": "조선소",
+        "subcategory": "중소",
+        "region": "경상남도",
+        "city": "통영시",
+        "note": "구 성동조선해양/육상건조 특화",
+        "data_source": "위키피디아/언론보도"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.3928, 34.8356]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "name": "SK오션플랜트 고성조선소",
+        "category": "조선소",
+        "subcategory": "중소",
+        "region": "경상남도",
+        "city": "고성군",
+        "note": "구 삼강엠앤티/해양플랜트",
+        "data_source": "언론보도"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.3067, 34.9178]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "name": "HD현대중공업 군산조선소",
+        "category": "조선소",
+        "subcategory": "중소",
+        "region": "전라북도",
+        "city": "군산시",
+        "note": "2023년 재가동/블록 생산",
+        "data_source": "언론보도"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.6947, 35.9547]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "name": "부산항 북항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "부산광역시",
+        "city": "중구",
+        "note": "대한민국 최대 항만",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.0369, 35.1028]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "name": "부산항 신항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "부산광역시",
+        "city": "강서구",
+        "note": "세계 5위 컨테이너항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.8514, 35.0756]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 15,
+        "name": "인천항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "인천광역시",
+        "city": "중구",
+        "note": "수도권 관문항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.6031, 37.4519]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 16,
+        "name": "울산항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "울산광역시",
+        "city": "남구",
+        "note": "석유화학 중심 항만",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.4028, 35.5008]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 17,
+        "name": "광양항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "전라남도",
+        "city": "광양시",
+        "note": "제철/컨테이너 복합항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [127.6939, 34.9108]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 18,
+        "name": "평택·당진항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "경기도",
+        "city": "평택시",
+        "note": "중국 교역 중심항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.8231, 36.9778]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 19,
+        "name": "목포항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "전라남도",
+        "city": "목포시",
+        "note": "서남권 관문항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.3756, 34.7847]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 20,
+        "name": "여수·광양항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "전라남도",
+        "city": "여수시",
+        "note": "석유화학 물류 중심",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [127.7478, 34.7428]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 21,
+        "name": "마산항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "경상남도",
+        "city": "창원시",
+        "note": "경남권 무역항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.5694, 35.1839]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 22,
+        "name": "포항항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "경상북도",
+        "city": "포항시",
+        "note": "제철 지원항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.3847, 36.0219]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 23,
+        "name": "동해·묵호항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "강원도",
+        "city": "동해시",
+        "note": "석탄·시멘트 물류",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.1147, 37.5247]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 24,
+        "name": "군산항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "전라북도",
+        "city": "군산시",
+        "note": "새만금 연계항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.7108, 35.9789]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 25,
+        "name": "대산항",
+        "category": "항만",
+        "subcategory": "무역항",
+        "region": "충청남도",
+        "city": "서산시",
+        "note": "석유화학 전용항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.3528, 36.9847]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 26,
+        "name": "HD현대중공업 1도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "울산광역시",
+        "city": "동구",
+        "note": "VLCC급 건조가능",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.4189, 35.5067]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 27,
+        "name": "HD현대중공업 해양도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "울산광역시",
+        "city": "동구",
+        "note": "해양플랜트 전용",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.4267, 35.5142]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 28,
+        "name": "삼성중공업 1도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "경상남도",
+        "city": "거제시",
+        "note": "대형 컨테이너선",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.6319, 34.8867]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 29,
+        "name": "삼성중공업 2도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "경상남도",
+        "city": "거제시",
+        "note": "LNG선 건조",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.6339, 34.8847]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 30,
+        "name": "삼성중공업 3도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "경상남도",
+        "city": "거제시",
+        "note": "세계적 규모(640m×97.5m)",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.6359, 34.8827]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 31,
+        "name": "한화오션 1도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "경상남도",
+        "city": "거제시",
+        "note": "대형선 건조(530m×130m)",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.7069, 34.8544]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 32,
+        "name": "한화오션 수리도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "경상남도",
+        "city": "거제시",
+        "note": "30만톤급 수리용",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.7109, 34.8584]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 33,
+        "name": "HD현대삼호 1도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "전라남도",
+        "city": "영암군",
+        "note": "초대형 도크",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.4136, 34.7669]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 34,
+        "name": "HD현대삼호 2도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "전라남도",
+        "city": "영암군",
+        "note": "초대형 도크",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.4176, 34.7709]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 35,
+        "name": "HD현대미포 1도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "울산광역시",
+        "city": "동구",
+        "note": "380m×65m",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.4177, 35.4897]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 36,
+        "name": "HD현대미포 2도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "울산광역시",
+        "city": "동구",
+        "note": "380m×65m",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.4197, 35.4917]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 37,
+        "name": "HD현대미포 3도크",
+        "category": "도크",
+        "subcategory": "건도크",
+        "region": "울산광역시",
+        "city": "동구",
+        "note": "380m×65m",
+        "data_source": "추정좌표/공식자료"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.4217, 35.4937]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 38,
+        "name": "감천항",
+        "category": "항만",
+        "subcategory": "연안항",
+        "region": "부산광역시",
+        "city": "사하구",
+        "note": "연안 어항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.9839, 35.0728]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 39,
+        "name": "장생포항",
+        "category": "항만",
+        "subcategory": "연안항",
+        "region": "울산광역시",
+        "city": "남구",
+        "note": "과거 포경 중심지",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.3847, 35.4928]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 40,
+        "name": "온산항",
+        "category": "항만",
+        "subcategory": "연안항",
+        "region": "울산광역시",
+        "city": "울주군",
+        "note": "석유화학 지원항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [129.3628, 35.4347]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 41,
+        "name": "진해항",
+        "category": "항만",
+        "subcategory": "연안항",
+        "region": "경상남도",
+        "city": "창원시",
+        "note": "해군작전사령부 인근",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.6778, 35.1147]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 42,
+        "name": "통영항",
+        "category": "항만",
+        "subcategory": "연안항",
+        "region": "경상남도",
+        "city": "통영시",
+        "note": "수산물 중심",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.4228, 34.8428]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 43,
+        "name": "삼천포항",
+        "category": "항만",
+        "subcategory": "연안항",
+        "region": "경상남도",
+        "city": "사천시",
+        "note": "연안 어항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.0678, 34.9247]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 44,
+        "name": "속초항",
+        "category": "항만",
+        "subcategory": "연안항",
+        "region": "강원도",
+        "city": "속초시",
+        "note": "동해안 관광항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.5947, 38.2078]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 45,
+        "name": "대포항",
+        "category": "항만",
+        "subcategory": "연안항",
+        "region": "강원도",
+        "city": "강릉시",
+        "note": "동해안 어항",
+        "data_source": "해양수산부"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [128.9128, 37.7928]
+      }
+    }
+  ]
+}
