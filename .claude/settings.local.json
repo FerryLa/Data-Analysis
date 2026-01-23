@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find . -name \"*.csv\" -exec sh -c 'mv \"\"$1\"\" ../data/bronze/$\\(basename \"\"$1\"\"\\)' _ {} ;)"
+    ]
+  }
+}
