@@ -1,0 +1,6 @@
+vessel_name,mmsi,route,reference_project,vessel_type,build_year,engine_type,remarks
+SAKIGAKE,900000001,UAE → Korea,NEDO Japan Ammonia Tugboat,Gas Carrier,2026,Ammonia Dual-Fuel,First commercial ammonia-powered tugboat (Sakigake 魁)
+HORIZON,900000002,Australia → Japan,NYK Medium Ammonia Gas Carrier,Gas Carrier,2027,Ammonia Dual-Fuel,NYK's next-generation ammonia gas carrier project
+TAURUS,900000003,US Gulf → Rotterdam,BHP/COSCO Ammonia Bulk Carrier,Bulk Carrier,2028,Ammonia Dual-Fuel,BHP charter contract with COSCO for ammonia-fueled vessels
+AQUARIUS,900000004,Chile → Shanghai,Trafigura Medium Gas Carrier,Gas Carrier,2029,Ammonia Dual-Fuel,Trafigura's ammonia dual-fuel gas carrier project
+PHOENIX,900000005,Norway → UAE,Hyundai EPS-HD Ammonia Vessel,Multipurpose,2030,Ammonia Dual-Fuel,Hyundai's Environmental Performance System - High Definition

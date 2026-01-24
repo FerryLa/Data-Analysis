@@ -1,0 +1,6 @@
+﻿port,lat,lon,type,marker_color,marker_symbol
+부산,35.1796,129.0756,출발지,yellow,star
+상하이,31.2304,121.4737,주요 항구,yellow,star
+뉴욕,40.6643,-74.0395,도착지,yellow,star
+로스앤젤레스,33.7175,-118.2699,주요 항구,yellow,star
+파나마운하,9.1406,-79.74515,운하,green,circle

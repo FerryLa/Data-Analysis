@@ -1,0 +1,6 @@
+Vessel_Name,Type,Departure_Port,Destination_Port,Departure_Time,ETA,Special_Feature,Operational_Status
+NYK-Ammonia-001,Ammonia Propulsion Carrier,Yokohama,Busan,2026-01-24 09:00,2026-01-26 15:00,World's first ammonia-fueled transport vessel,Underway (Simulated)
+Naftomar-Mega-002,Ammonia/LNG Hybrid Carrier,Houston,Pyeongtaek,2026-01-24 10:30,2026-01-27 12:00,World's largest ammonia carrier class,Underway (Simulated)
+MOL-Namura-003,Ammonia Propulsion Carrier,Singapore,Gwangyang,2026-01-24 08:45,2026-01-26 20:00,Joint Japan development with eco-engine,Underway (Simulated)
+Yara-NYK-004,Dedicated Ammonia Carrier,Rotterdam,Incheon,2026-01-24 11:00,2026-01-28 09:00,First ammonia-dedicated time charter contract,Scheduled
+Exmar-Hybrid-005,LPG/Ammonia Hybrid Carrier,Antwerp,Ulsan,2026-01-24 07:30,2026-01-26 18:00,LR-approved hybrid fuel system,Underway (Simulated)

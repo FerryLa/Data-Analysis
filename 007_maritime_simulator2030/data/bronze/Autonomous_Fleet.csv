@@ -1,0 +1,6 @@
+vessel_name,imo,mmsi,callsign,flag,build_year,vessel_type,role,source,verified_date
+Yara Birkeland,9865049,257646000,LFQX,Norway,2020,Container Ship,완전 자율 상징,MarineTraffic,2026-01-24
+Therese,9921788,259005610,LGMN,Norway,2022,Ro-Ro Cargo,전기/연안 시험,MarineTraffic,2026-01-24
+Marit,9921776,258022650,Unknown,Norway,2022,Ro-Ro Cargo,전기/연안 시험,VesselFinder,2026-01-24
+Prism Courage,9888481,352986205,3E3945,Panama,2021,LNG Tanker,AI 항해 보조 (Avikus HiNAS),MarineTraffic,2026-01-24
+HMM Algeciras,9863297,440326000,D7JI,South Korea,2020,Container Ship,일반 대형 상선 (비교군),MarineTraffic,2026-01-24
