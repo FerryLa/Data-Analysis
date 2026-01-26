@@ -1,4 +1,4 @@
-"""
+g"""
 Maritime Communication Simulation Platform - Streamlit App
 ===========================================================
 
@@ -48,6 +48,7 @@ from scenario_controller import (
     create_scenario_heavy_weather,
     create_scenario_satellite_handover
 )
+from eta_calculator import ETACalculator, format_timedelta
 
 
 # ============================================================================
@@ -75,11 +76,176 @@ if 'initialized' not in st.session_state:
     st.session_state.simulation_running = False
     st.session_state.vessel_states = {}
     st.session_state.prediction_errors = []
+    st.session_state.routes = {}  # 항로 정보
+    st.session_state.eta_calculator = ETACalculator()
 
 
 # ============================================================================
 # 헬퍼 함수
 # ============================================================================
+
+def export_powerbi_data():
+    """PowerBI용 데이터를 CSV로 내보내기 (ETA 정보 포함)"""
+    try:
+        export_data = []
+        current_time = datetime.utcnow()
+
+        # 항로 정보 로드 (처음 한 번만)
+        if not st.session_state.routes:
+            st.session_state.routes = ETACalculator.load_routes()
+
+        # 실시간 AIS 선박 데이터
+        for vessel in st.session_state.vessel_states.values():
+            # 통신 타입 결정
+            if 'AMMONIA' in vessel.vessel_type or 'Ammonia' in vessel.vessel_name:
+                comm_type = 'AMMONIA_SIM'
+                comm_status = 'Normal'
+                color_code = 'Green'
+            elif 'SMR' in vessel.vessel_type or 'SMR' in vessel.vessel_name:
+                comm_type = 'SMR_SIM'
+                comm_status = 'Normal'
+                color_code = 'Red'
+            else:
+                comm_type = 'AIS'
+                comm_status = 'Connected'
+                color_code = 'Black'
+
+            # ETA 계산 (항로 정보가 있으면)
+            eta_info = {}
+            if vessel.mmsi in st.session_state.routes:
+                route_info = st.session_state.routes[vessel.mmsi]
+                eta_result = ETACalculator.calculate_full_eta(
+                    vessel.vessel_name,
+                    vessel.mmsi,
+                    vessel.latitude,
+                    vessel.longitude,
+                    vessel.speed,
+                    route_info,
+                    current_time
+                )
+
+                eta_info = {
+                    'departure_port': eta_result.departure_port,
+                    'arrival_port': eta_result.arrival_port,
+                    'distance_remaining_nm': round(eta_result.distance_remaining_nm, 2),
+                    'eta': eta_result.eta.strftime('%Y-%m-%d %H:%M:%S'),
+                    'eta_formatted': eta_result.eta_formatted,
+                    'voyage_progress_pct': round(eta_result.voyage_progress_pct, 2),
+                    'time_elapsed': format_timedelta(eta_result.time_elapsed),
+                    'time_remaining': format_timedelta(eta_result.time_remaining)
+                }
+            else:
+                eta_info = {
+                    'departure_port': 'N/A',
+                    'arrival_port': 'N/A',
+                    'distance_remaining_nm': 0,
+                    'eta': 'N/A',
+                    'eta_formatted': 'N/A',
+                    'voyage_progress_pct': 0,
+                    'time_elapsed': 'N/A',
+                    'time_remaining': 'N/A'
+                }
+
+            export_data.append({
+                'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+                'vessel_id': vessel.mmsi,
+                'vessel_name': vessel.vessel_name,
+                'mmsi': vessel.mmsi,
+                'vessel_type': vessel.vessel_type,
+                'latitude': vessel.latitude,
+                'longitude': vessel.longitude,
+                'speed_knots': vessel.speed,
+                'course_deg': vessel.course,
+                'comm_type': comm_type,
+                'comm_status': comm_status,
+                'data_source': vessel.data_source,
+                'color_code': color_code,
+                'last_update': vessel.timestamp.strftime('%Y-%m-%d %H:%M:%S'),
+                **eta_info
+            })
+
+        # 예상 위치 선박 데이터 (실시간 데이터가 없는 경우만)
+        oceanic_predicted = get_oceanic_ships_predicted_positions()
+        for pred in oceanic_predicted:
+            has_realtime = pred['mmsi'] in st.session_state.vessel_states
+
+            if not has_realtime:
+                # ETA 계산
+                eta_info = {}
+                if pred['mmsi'] in st.session_state.routes:
+                    route_info = st.session_state.routes[pred['mmsi']]
+                    eta_result = ETACalculator.calculate_full_eta(
+                        pred['vessel_name'],
+                        pred['mmsi'],
+                        pred['latitude'],
+                        pred['longitude'],
+                        pred['speed'],
+                        route_info,
+                        current_time
+                    )
+
+                    eta_info = {
+                        'departure_port': eta_result.departure_port,
+                        'arrival_port': eta_result.arrival_port,
+                        'distance_remaining_nm': round(eta_result.distance_remaining_nm, 2),
+                        'eta': eta_result.eta.strftime('%Y-%m-%d %H:%M:%S'),
+                        'eta_formatted': eta_result.eta_formatted,
+                        'voyage_progress_pct': round(eta_result.voyage_progress_pct, 2),
+                        'time_elapsed': format_timedelta(eta_result.time_elapsed),
+                        'time_remaining': format_timedelta(eta_result.time_remaining)
+                    }
+                else:
+                    eta_info = {
+                        'departure_port': 'N/A',
+                        'arrival_port': 'N/A',
+                        'distance_remaining_nm': 0,
+                        'eta': 'N/A',
+                        'eta_formatted': 'N/A',
+                        'voyage_progress_pct': 0,
+                        'time_elapsed': 'N/A',
+                        'time_remaining': 'N/A'
+                    }
+
+                export_data.append({
+                    'timestamp': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+                    'vessel_id': pred['mmsi'],
+                    'vessel_name': pred['vessel_name'],
+                    'mmsi': pred['mmsi'],
+                    'vessel_type': pred['vessel_type'],
+                    'latitude': pred['latitude'],
+                    'longitude': pred['longitude'],
+                    'speed_knots': pred['speed'],
+                    'course_deg': pred['course'],
+                    'comm_type': 'SATELLITE_PRED',
+                    'comm_status': 'Predicted',
+                    'data_source': 'PREDICTED',
+                    'color_code': 'LightBlue',
+                    'last_update': current_time.strftime('%Y-%m-%d %H:%M:%S'),
+                    **eta_info
+                })
+
+        # DataFrame 생성 및 저장
+        df = pd.DataFrame(export_data)
+
+        # powerbi/datasets 폴더에 저장
+        export_path = Path(__file__).parent.parent / 'powerbi' / 'datasets'
+        export_path.mkdir(parents=True, exist_ok=True)
+
+        # 타임스탬프 파일명
+        filename = f"maritime_data_{current_time.strftime('%Y%m%d_%H%M%S')}.csv"
+        filepath = export_path / filename
+
+        df.to_csv(filepath, index=False, encoding='utf-8-sig')
+
+        # 최신 데이터로 덮어쓰기 (PowerBI 연동용)
+        latest_filepath = export_path / "maritime_data_latest.csv"
+        df.to_csv(latest_filepath, index=False, encoding='utf-8-sig')
+
+        st.success(f"✅ 데이터 내보내기 완료!\n파일: {filename}\n경로: {export_path}")
+
+    except Exception as e:
+        st.error(f"❌ 데이터 내보내기 실패: {str(e)}")
+
 
 def create_vessel_marker(vessel: VesselState, map_obj: folium.Map, is_predicted: bool = False):
     """선박 마커를 지도에 추가
@@ -350,8 +516,9 @@ def main():
         return
 
     # 탭 구성
-    tab1, tab2, tab3, tab4 = st.tabs([
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "🗺️ 실시간 지도",
+        "⏱️ ETA 현황",
         "📈 성능 분석",
         "⚠️ 이벤트 로그",
         "ℹ️ 시스템 정보"
@@ -491,8 +658,113 @@ def main():
             df = pd.DataFrame(vessel_data)
             st.dataframe(df, use_container_width=True)
 
-    # 탭 2: 성능 분석
+            # PowerBI용 CSV Export 버튼
+            col1, col2 = st.columns([3, 1])
+            with col2:
+                if st.button("📊 PowerBI용 데이터 내보내기"):
+                    export_powerbi_data()
+
+    # 탭 2: ETA 현황
     with tab2:
+        st.subheader("⏱️ 선박 ETA (예상 도착 시간) 현황")
+
+        # 항로 정보 로드
+        if not st.session_state.routes:
+            st.session_state.routes = ETACalculator.load_routes()
+
+        current_time = datetime.utcnow()
+        eta_data = []
+
+        # 실시간 선박 ETA 계산
+        for vessel in st.session_state.vessel_states.values():
+            if vessel.mmsi in st.session_state.routes:
+                route_info = st.session_state.routes[vessel.mmsi]
+                eta_result = ETACalculator.calculate_full_eta(
+                    vessel.vessel_name,
+                    vessel.mmsi,
+                    vessel.latitude,
+                    vessel.longitude,
+                    vessel.speed,
+                    route_info,
+                    current_time
+                )
+
+                eta_data.append({
+                    '선박명': eta_result.vessel_name,
+                    'MMSI': eta_result.mmsi,
+                    '출발지': eta_result.departure_port,
+                    '도착지': eta_result.arrival_port,
+                    '현재 위치': f"{eta_result.current_latitude:.4f}°N, {eta_result.current_longitude:.4f}°E",
+                    '속도': f"{eta_result.speed_knots:.1f} kn",
+                    '남은 거리': f"{eta_result.distance_remaining_nm:.1f} nm",
+                    '진행률': f"{eta_result.voyage_progress_pct:.1f}%",
+                    '경과 시간': eta_result.time_elapsed,
+                    '남은 시간': eta_result.time_remaining,
+                    'ETA': eta_result.eta_formatted
+                })
+
+        # 예상 위치 선박 ETA 계산
+        oceanic_predicted = get_oceanic_ships_predicted_positions()
+        for pred in oceanic_predicted:
+            if pred['mmsi'] not in st.session_state.vessel_states:
+                if pred['mmsi'] in st.session_state.routes:
+                    route_info = st.session_state.routes[pred['mmsi']]
+                    eta_result = ETACalculator.calculate_full_eta(
+                        pred['vessel_name'],
+                        pred['mmsi'],
+                        pred['latitude'],
+                        pred['longitude'],
+                        pred['speed'],
+                        route_info,
+                        current_time
+                    )
+
+                    eta_data.append({
+                        '선박명': eta_result.vessel_name,
+                        'MMSI': eta_result.mmsi,
+                        '출발지': eta_result.departure_port,
+                        '도착지': eta_result.arrival_port,
+                        '현재 위치': f"{eta_result.current_latitude:.4f}°N, {eta_result.current_longitude:.4f}°E",
+                        '속도': f"{eta_result.speed_knots:.1f} kn",
+                        '남은 거리': f"{eta_result.distance_remaining_nm:.1f} nm",
+                        '진행률': f"{eta_result.voyage_progress_pct:.1f}%",
+                        '경과 시간': format_timedelta(eta_result.time_elapsed),
+                        '남은 시간': format_timedelta(eta_result.time_remaining),
+                        'ETA': eta_result.eta_formatted
+                    })
+
+        if eta_data:
+            df_eta = pd.DataFrame(eta_data)
+            st.dataframe(df_eta, use_container_width=True)
+
+            # ETA 시각화 (진행률 바 차트)
+            st.subheader("항해 진행률")
+            progress_data = []
+            for item in eta_data:
+                progress_data.append({
+                    '선박명': item['선박명'],
+                    '진행률': float(item['진행률'].replace('%', ''))
+                })
+
+            df_progress = pd.DataFrame(progress_data)
+            fig = px.bar(
+                df_progress,
+                x='진행률',
+                y='선박명',
+                orientation='h',
+                title='선박별 항해 진행률 (%)',
+                labels={'진행률': '진행률 (%)', '선박명': '선박'},
+                color='진행률',
+                color_continuous_scale='Blues'
+            )
+            fig.update_layout(yaxis={'categoryorder': 'total ascending'})
+            st.plotly_chart(fig, use_container_width=True)
+
+        else:
+            st.info("항로 정보가 있는 선박이 없습니다.")
+
+    # 탭 3: 성능 분석
+    with tab3:
         st.subheader("통신 성능 분석")
 
         if st.session_state.scenario_controller:
@@ -536,8 +808,8 @@ def main():
         else:
             st.warning("시나리오 컨트롤러가 초기화되지 않았습니다.")
 
-    # 탭 3: 이벤트 로그
-    with tab3:
+    # 탭 4: 이벤트 로그
+    with tab4:
         st.subheader("항로 이탈 및 위반 이벤트")
 
         if st.session_state.smr_vessel:
@@ -562,8 +834,8 @@ def main():
             else:
                 st.success("위반 이벤트가 없습니다.")
 
-    # 탭 4: 시스템 정보
-    with tab4:
+    # 탭 5: 시스템 정보
+    with tab5:
         st.subheader("시스템 정보")
 
         st.markdown("""
