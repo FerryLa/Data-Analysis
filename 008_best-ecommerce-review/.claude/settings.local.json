@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venvScriptsactivate)",
+      "Bash(pip install:*)",
+      "Bash(venvScriptsactivate.bat:*)",
+      "Bash(venv/Scripts/python.exe -m pip install:*)",
+      "Bash(venv/Scripts/python.exe:*)",
+      "Bash(docker --version:*)",
+      "Bash(docker ps:*)",
+      "Bash(start \"\" \"C:\\\\Program Files\\\\Docker\\\\Docker\\\\Docker Desktop.exe\")",
+      "Bash(docker run:*)",
+      "Bash(docker rm:*)",
+      "Bash(curl:*)",
+      "Bash(ls:*)",
+      "Bash(file:*)",
+      "Bash(wc:*)",
+      "Bash(venvScriptspython.exe -c \"import psycopg2; conn = psycopg2.connect\\(host=''localhost'', port=5432, database=''review_db'', user=''n8n_user'', password=''review_automation_2025''\\); print\\(''Connected!''\\); conn.close\\(\\)\")",
+      "Bash(PGCLIENTENCODING=utf-8 venv/Scripts/python.exe -c \"import os; os.environ[''PGCLIENTENCODING'']=''UTF8''; import psycopg2; conn = psycopg2.connect\\(host=''localhost'', port=5432, database=''review_db'', user=''n8n_user'', password=''review_automation_2025''\\); print\\(''Connected''\\); conn.close\\(\\)\")",
+      "Bash(docker port:*)",
+      "Bash(docker stop:*)",
+      "Bash(docker volume rm:*)",
+      "Bash(docker exec:*)",
+      "Bash(docker restart:*)",
+      "Bash(PYTHONIOENCODING=utf-8 venv/Scripts/python.exe:*)",
+      "Bash(netstat:*)",
+      "Bash(tasklist:*)",
+      "Bash(wmic process:*)",
+      "Bash(wmic process where:*)",
+      "Bash(du:*)",
+      "Bash(python:*)",
+      "Bash(docker info:*)",
+      "Bash(docker image ls:*)",
+      "Bash(findstr:*)",
+      "Bash(netsh interface ipv4 show excludedportrange:*)",
+      "Bash(where:*)",
+      "Bash(git add:*)",
+      "Bash(git reset:*)"
+    ]
+  }
+}

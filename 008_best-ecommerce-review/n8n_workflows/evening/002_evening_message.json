@@ -1,0 +1,152 @@
+{
+  "name": "002_Evening_Message_Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "cronExpression": "0 17 * * *"
+            }
+          ]
+        }
+      },
+      "id": "evening-trigger-002",
+      "name": "Cron_5PM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, review_id, review_content, rating, created_date, product_category\nFROM raw_reviews\nWHERE rating >= 4.0\nORDER BY rating DESC, created_date DESC\nLIMIT 50;"
+      },
+      "id": "query-reviews-002",
+      "name": "Query_Today_Positive_Reviews",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "credentials": {
+        "postgres": {
+          "name": "PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nconst positiveKeywords = ['감사', '추천', '좋아요', '최고', '만족', '편리', '굿', '짱', '대박', '사랑', '훌륭', '완벽'];\nconst csRiskKeywords = ['환불', '교환', '파손', '불량', '최악', '문제'];\n\nconst filtered = items.filter(item => {\n  const content = item.json.review_content || '';\n  const hasRisk = csRiskKeywords.some(word => content.includes(word));\n  if (hasRisk) return false;\n  \n  const hasPositive = positiveKeywords.some(word => content.includes(word));\n  return hasPositive;\n});\n\nif (filtered.length === 0) {\n  return items.slice(0, 10);\n}\n\nreturn filtered;"
+      },
+      "id": "filter-positive-002",
+      "name": "Filter_Positive",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nconst positiveKeywords = ['감사', '추천', '좋아요', '최고', '만족', '편리', '굿', '짱', '대박', '사랑', '훌륭', '완벽', '고마워', '고맙', '따뜻', '감동', '행복', '강추', '대만족', '멋져', '좋네'];\n\nconst scored = items.map(item => {\n  const content = item.json.review_content || '';\n  let score = 0;\n  positiveKeywords.forEach(kw => {\n    const regex = new RegExp(kw, 'g');\n    const matches = content.match(regex);\n    if (matches) score += matches.length * 10;\n  });\n  score += (item.json.rating || 0) * 5;\n  score = Math.min(score, 100);\n  return {\n    json: {\n      ...item.json,\n      positive_score: score\n    }\n  };\n});\n\nscored.sort((a, b) => b.json.positive_score - a.json.positive_score);\n\nconst top5 = scored.slice(0, Math.min(5, scored.length));\nconst selected = top5[Math.floor(Math.random() * top5.length)];\n\nreturn [selected];"
+      },
+      "id": "score-select-002",
+      "name": "Score_And_Select",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'claude-sonnet-4-5-20250929', max_tokens: 300, messages: [{role: 'user', content: '다음 이커머스 리뷰를 저녁용 따뜻한 메시지로 포맷팅해주세요.\\n\\n원본 리뷰: ' + $json.review_content + '\\n\\n형식:\\n오늘의 따뜻한 리뷰: \"[핵심 문구]\"\\n[짧은 해설 한 줄]\\n\\n간결하고 따뜻하게 작성해주세요.'}] }) }}"
+      },
+      "id": "format-message-002",
+      "name": "Claude_Format_Message",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.all()[0];\nconst prevData = $('Score_And_Select').first().json;\n\nconst fullText = item.json.content?.[0]?.text || '';\nconst formattedMessage = fullText;\nconst commentary = '';\n\nreturn [{\n  json: {\n    review_id: prevData.review_id || 'UNKNOWN',\n    id: prevData.id || 0,\n    review_content: prevData.review_content || '',\n    formatted_message: formattedMessage,\n    commentary: commentary\n  }\n}];"
+      },
+      "id": "prepare-insert-002",
+      "name": "Prepare_Insert",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO evening_messages (scored_review_id, message_date, original_review, formatted_message, commentary)\nVALUES ({{$json.id}}, CURRENT_DATE, '{{$json.review_content}}', '{{$json.formatted_message}}', '{{$json.commentary}}')\nON CONFLICT (message_date)\nDO UPDATE SET\n  scored_review_id = EXCLUDED.scored_review_id,\n  original_review = EXCLUDED.original_review,\n  formatted_message = EXCLUDED.formatted_message,\n  created_at = CURRENT_TIMESTAMP;"
+      },
+      "id": "insert-message-002",
+      "name": "Insert_Evening_Message",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1450, 300],
+      "credentials": {
+        "postgres": {
+          "name": "PostgreSQL"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Cron_5PM": {
+      "main": [
+        [{ "node": "Query_Today_Positive_Reviews", "type": "main", "index": 0 }]
+      ]
+    },
+    "Query_Today_Positive_Reviews": {
+      "main": [
+        [{ "node": "Filter_Positive", "type": "main", "index": 0 }]
+      ]
+    },
+    "Filter_Positive": {
+      "main": [
+        [{ "node": "Score_And_Select", "type": "main", "index": 0 }]
+      ]
+    },
+    "Score_And_Select": {
+      "main": [
+        [{ "node": "Claude_Format_Message", "type": "main", "index": 0 }]
+      ]
+    },
+    "Claude_Format_Message": {
+      "main": [
+        [{ "node": "Prepare_Insert", "type": "main", "index": 0 }]
+      ]
+    },
+    "Prepare_Insert": {
+      "main": [
+        [{ "node": "Insert_Evening_Message", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2026-02-09T00:00:00.000Z",
+  "versionId": "3.0"
+}

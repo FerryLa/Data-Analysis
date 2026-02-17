@@ -1,0 +1,60 @@
+{
+  "name": "003_CSV_Loader_Status",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger-003",
+      "name": "Manual_Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT product_category, COUNT(*) as cnt, ROUND(AVG(rating)::numeric, 2) as avg_rating, ROUND(AVG(LENGTH(review_content))::numeric, 0) as avg_len FROM raw_reviews GROUP BY product_category ORDER BY cnt DESC;"
+      },
+      "id": "check-status-003",
+      "name": "Check_DB_Status",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "credentials": {
+        "postgres": {
+          "name": "PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nconst totalCount = items.reduce((sum, item) => sum + (item.json.cnt || 0), 0);\n\nconst stats = items.map(item => ({\n  category: item.json.product_category,\n  count: item.json.cnt,\n  avg_rating: item.json.avg_rating,\n  avg_length: item.json.avg_len\n}));\n\nreturn [{\n  json: {\n    summary: {\n      totalReviewsInDB: totalCount,\n      categories: stats.length\n    },\n    details: stats,\n    checkedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "summary-003",
+      "name": "Generate_Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    }
+  ],
+  "connections": {
+    "Manual_Trigger": {
+      "main": [
+        [{ "node": "Check_DB_Status", "type": "main", "index": 0 }]
+      ]
+    },
+    "Check_DB_Status": {
+      "main": [
+        [{ "node": "Generate_Summary", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-02-09T00:00:00.000Z",
+  "versionId": "2.0"
+}
