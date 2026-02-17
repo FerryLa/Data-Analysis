@@ -1,0 +1,361 @@
+﻿date,product_code,product_name,planned_qty,actual_qty,achievement_rate,line_stop,is_weekend
+2025-02-17,FG-BAT-01,배터리 팩 (Battery Pack),150,144,96.1,False,False
+2025-02-17,FG-MTR-01,전기모터 (Electric Motor),80,73,90.6,False,False
+2025-02-17,FG-INV-01,인버터 (Inverter),120,120,100.1,False,False
+2025-02-17,FG-CHG-01,충전기 (EV Charger),200,205,102.5,False,False
+2025-02-18,FG-BAT-01,배터리 팩 (Battery Pack),150,134,89.6,False,False
+2025-02-18,FG-MTR-01,전기모터 (Electric Motor),80,73,91.2,False,False
+2025-02-18,FG-INV-01,인버터 (Inverter),120,104,86.5,False,False
+2025-02-18,FG-CHG-01,충전기 (EV Charger),200,198,99.2,False,False
+2025-02-19,FG-BAT-01,배터리 팩 (Battery Pack),150,150,100.0,False,False
+2025-02-19,FG-MTR-01,전기모터 (Electric Motor),80,70,87.2,False,False
+2025-02-19,FG-INV-01,인버터 (Inverter),120,120,100.0,False,False
+2025-02-19,FG-CHG-01,충전기 (EV Charger),200,96,48.1,True,False
+2025-02-20,FG-BAT-01,배터리 팩 (Battery Pack),150,150,99.8,False,False
+2025-02-20,FG-MTR-01,전기모터 (Electric Motor),80,81,101.3,False,False
+2025-02-20,FG-INV-01,인버터 (Inverter),120,121,100.5,False,False
+2025-02-20,FG-CHG-01,충전기 (EV Charger),200,171,85.6,False,False
+2025-02-21,FG-BAT-01,배터리 팩 (Battery Pack),150,129,85.8,False,False
+2025-02-21,FG-MTR-01,전기모터 (Electric Motor),80,73,91.4,False,False
+2025-02-21,FG-INV-01,인버터 (Inverter),120,109,90.6,False,False
+2025-02-21,FG-CHG-01,충전기 (EV Charger),200,205,102.7,False,False
+2025-02-22,FG-BAT-01,배터리 팩 (Battery Pack),45,46,102.3,False,True
+2025-02-22,FG-MTR-01,전기모터 (Electric Motor),24,23,95.7,False,True
+2025-02-22,FG-INV-01,인버터 (Inverter),36,33,91.5,False,True
+2025-02-22,FG-CHG-01,충전기 (EV Charger),60,52,87.4,False,True
+2025-02-23,FG-BAT-01,배터리 팩 (Battery Pack),45,46,103.1,False,True
+2025-02-23,FG-MTR-01,전기모터 (Electric Motor),24,25,104.8,False,True
+2025-02-23,FG-INV-01,인버터 (Inverter),36,32,87.7,False,True
+2025-02-23,FG-CHG-01,충전기 (EV Charger),60,53,88.7,False,True
+2025-02-24,FG-BAT-01,배터리 팩 (Battery Pack),150,129,86.2,False,False
+2025-02-24,FG-MTR-01,전기모터 (Electric Motor),80,74,92.3,False,False
+2025-02-24,FG-INV-01,인버터 (Inverter),120,125,104.5,False,False
+2025-02-24,FG-CHG-01,충전기 (EV Charger),200,199,99.7,False,False
+2025-02-25,FG-BAT-01,배터리 팩 (Battery Pack),150,153,101.8,False,False
+2025-02-25,FG-MTR-01,전기모터 (Electric Motor),80,79,99.2,False,False
+2025-02-25,FG-INV-01,인버터 (Inverter),120,110,91.3,False,False
+2025-02-25,FG-CHG-01,충전기 (EV Charger),200,204,101.9,False,False
+2025-02-26,FG-BAT-01,배터리 팩 (Battery Pack),150,149,99.4,False,False
+2025-02-26,FG-MTR-01,전기모터 (Electric Motor),80,48,60.4,True,False
+2025-02-26,FG-INV-01,인버터 (Inverter),120,103,85.9,False,False
+2025-02-26,FG-CHG-01,충전기 (EV Charger),200,175,87.4,False,False
+2025-02-27,FG-BAT-01,배터리 팩 (Battery Pack),150,142,94.5,False,False
+2025-02-27,FG-MTR-01,전기모터 (Electric Motor),80,70,87.8,False,False
+2025-02-27,FG-INV-01,인버터 (Inverter),120,114,94.7,False,False
+2025-02-27,FG-CHG-01,충전기 (EV Charger),200,175,87.3,False,False
+2025-02-28,FG-BAT-01,배터리 팩 (Battery Pack),150,93,62.1,True,False
+2025-02-28,FG-MTR-01,전기모터 (Electric Motor),80,84,104.6,False,False
+2025-02-28,FG-INV-01,인버터 (Inverter),120,114,95.1,False,False
+2025-02-28,FG-CHG-01,충전기 (EV Charger),200,208,104.1,False,False
+2025-03-01,FG-BAT-01,배터리 팩 (Battery Pack),45,42,93.9,False,True
+2025-03-01,FG-MTR-01,전기모터 (Electric Motor),24,24,99.0,False,True
+2025-03-01,FG-INV-01,인버터 (Inverter),36,34,93.9,False,True
+2025-03-01,FG-CHG-01,충전기 (EV Charger),60,59,98.1,False,True
+2025-03-02,FG-BAT-01,배터리 팩 (Battery Pack),45,44,98.3,False,True
+2025-03-02,FG-MTR-01,전기모터 (Electric Motor),24,22,93.0,False,True
+2025-03-02,FG-INV-01,인버터 (Inverter),36,32,89.4,False,True
+2025-03-02,FG-CHG-01,충전기 (EV Charger),60,62,104.0,False,True
+2025-03-03,FG-BAT-01,배터리 팩 (Battery Pack),150,135,90.2,False,False
+2025-03-03,FG-MTR-01,전기모터 (Electric Motor),80,80,99.7,False,False
+2025-03-03,FG-INV-01,인버터 (Inverter),120,122,102.1,False,False
+2025-03-03,FG-CHG-01,충전기 (EV Charger),200,198,99.1,False,False
+2025-03-04,FG-BAT-01,배터리 팩 (Battery Pack),150,152,101.6,False,False
+2025-03-04,FG-MTR-01,전기모터 (Electric Motor),80,78,97.4,False,False
+2025-03-04,FG-INV-01,인버터 (Inverter),120,113,94.6,False,False
+2025-03-04,FG-CHG-01,충전기 (EV Charger),200,195,97.6,False,False
+2025-03-05,FG-BAT-01,배터리 팩 (Battery Pack),150,141,94.0,False,False
+2025-03-05,FG-MTR-01,전기모터 (Electric Motor),80,80,99.9,False,False
+2025-03-05,FG-INV-01,인버터 (Inverter),120,119,98.9,False,False
+2025-03-05,FG-CHG-01,충전기 (EV Charger),200,203,101.4,False,False
+2025-03-06,FG-BAT-01,배터리 팩 (Battery Pack),150,148,98.4,False,False
+2025-03-06,FG-MTR-01,전기모터 (Electric Motor),80,78,97.4,False,False
+2025-03-06,FG-INV-01,인버터 (Inverter),120,119,98.8,False,False
+2025-03-06,FG-CHG-01,충전기 (EV Charger),200,180,89.8,False,False
+2025-03-07,FG-BAT-01,배터리 팩 (Battery Pack),150,157,104.4,False,False
+2025-03-07,FG-MTR-01,전기모터 (Electric Motor),80,77,96.3,False,False
+2025-03-07,FG-INV-01,인버터 (Inverter),120,116,96.7,False,False
+2025-03-07,FG-CHG-01,충전기 (EV Charger),200,200,100.2,False,False
+2025-03-08,FG-BAT-01,배터리 팩 (Battery Pack),45,40,88.9,False,True
+2025-03-08,FG-MTR-01,전기모터 (Electric Motor),24,23,94.5,False,True
+2025-03-08,FG-INV-01,인버터 (Inverter),36,34,95.3,False,True
+2025-03-08,FG-CHG-01,충전기 (EV Charger),60,53,89.0,False,True
+2025-03-09,FG-BAT-01,배터리 팩 (Battery Pack),45,39,86.4,False,True
+2025-03-09,FG-MTR-01,전기모터 (Electric Motor),24,24,102.1,False,True
+2025-03-09,FG-INV-01,인버터 (Inverter),36,33,92.2,False,True
+2025-03-09,FG-CHG-01,충전기 (EV Charger),60,53,89.0,False,True
+2025-03-10,FG-BAT-01,배터리 팩 (Battery Pack),150,134,89.1,False,False
+2025-03-10,FG-MTR-01,전기모터 (Electric Motor),80,72,89.6,False,False
+2025-03-10,FG-INV-01,인버터 (Inverter),120,112,92.9,False,False
+2025-03-10,FG-CHG-01,충전기 (EV Charger),200,202,101.2,False,False
+2025-03-11,FG-BAT-01,배터리 팩 (Battery Pack),150,131,87.2,False,False
+2025-03-11,FG-MTR-01,전기모터 (Electric Motor),80,77,96.6,False,False
+2025-03-11,FG-INV-01,인버터 (Inverter),120,108,89.8,False,False
+2025-03-11,FG-CHG-01,충전기 (EV Charger),200,130,65.1,True,False
+2025-03-12,FG-BAT-01,배터리 팩 (Battery Pack),150,149,99.6,False,False
+2025-03-12,FG-MTR-01,전기모터 (Electric Motor),80,78,97.0,False,False
+2025-03-12,FG-INV-01,인버터 (Inverter),120,123,102.8,False,False
+2025-03-12,FG-CHG-01,충전기 (EV Charger),200,170,85.1,False,False
+2025-03-13,FG-BAT-01,배터리 팩 (Battery Pack),150,145,96.7,False,False
+2025-03-13,FG-MTR-01,전기모터 (Electric Motor),80,69,86.1,False,False
+2025-03-13,FG-INV-01,인버터 (Inverter),120,114,95.0,False,False
+2025-03-13,FG-CHG-01,충전기 (EV Charger),200,99,49.5,True,False
+2025-03-14,FG-BAT-01,배터리 팩 (Battery Pack),150,148,98.8,False,False
+2025-03-14,FG-MTR-01,전기모터 (Electric Motor),80,78,97.5,False,False
+2025-03-14,FG-INV-01,인버터 (Inverter),120,107,88.8,False,False
+2025-03-14,FG-CHG-01,충전기 (EV Charger),200,192,96.1,False,False
+2025-03-15,FG-BAT-01,배터리 팩 (Battery Pack),45,42,93.6,False,True
+2025-03-15,FG-MTR-01,전기모터 (Electric Motor),24,24,99.5,False,True
+2025-03-15,FG-INV-01,인버터 (Inverter),36,37,101.7,False,True
+2025-03-15,FG-CHG-01,충전기 (EV Charger),60,60,100.8,False,True
+2025-03-16,FG-BAT-01,배터리 팩 (Battery Pack),45,41,91.8,False,True
+2025-03-16,FG-MTR-01,전기모터 (Electric Motor),24,21,85.8,False,True
+2025-03-16,FG-INV-01,인버터 (Inverter),36,34,93.9,False,True
+2025-03-16,FG-CHG-01,충전기 (EV Charger),60,52,86.3,False,True
+2025-03-17,FG-BAT-01,배터리 팩 (Battery Pack),150,145,96.7,False,False
+2025-03-17,FG-MTR-01,전기모터 (Electric Motor),80,78,97.4,False,False
+2025-03-17,FG-INV-01,인버터 (Inverter),120,118,98.2,False,False
+2025-03-17,FG-CHG-01,충전기 (EV Charger),200,175,87.3,False,False
+2025-03-18,FG-BAT-01,배터리 팩 (Battery Pack),150,68,45.2,True,False
+2025-03-18,FG-MTR-01,전기모터 (Electric Motor),80,70,87.1,False,False
+2025-03-18,FG-INV-01,인버터 (Inverter),120,111,92.9,False,False
+2025-03-18,FG-CHG-01,충전기 (EV Charger),200,202,101.1,False,False
+2025-03-19,FG-BAT-01,배터리 팩 (Battery Pack),150,156,104.2,False,False
+2025-03-19,FG-MTR-01,전기모터 (Electric Motor),80,78,97.4,False,False
+2025-03-19,FG-INV-01,인버터 (Inverter),120,118,98.3,False,False
+2025-03-19,FG-CHG-01,충전기 (EV Charger),200,62,30.9,True,False
+2025-03-20,FG-BAT-01,배터리 팩 (Battery Pack),150,138,92.2,False,False
+2025-03-20,FG-MTR-01,전기모터 (Electric Motor),80,74,92.8,False,False
+2025-03-20,FG-INV-01,인버터 (Inverter),120,120,99.8,False,False
+2025-03-20,FG-CHG-01,충전기 (EV Charger),200,208,103.8,False,False
+2025-03-21,FG-BAT-01,배터리 팩 (Battery Pack),150,149,99.0,False,False
+2025-03-21,FG-MTR-01,전기모터 (Electric Motor),80,75,93.4,False,False
+2025-03-21,FG-INV-01,인버터 (Inverter),120,124,103.7,False,False
+2025-03-21,FG-CHG-01,충전기 (EV Charger),200,190,94.9,False,False
+2025-03-22,FG-BAT-01,배터리 팩 (Battery Pack),45,39,87.2,False,True
+2025-03-22,FG-MTR-01,전기모터 (Electric Motor),24,23,97.3,False,True
+2025-03-22,FG-INV-01,인버터 (Inverter),36,32,88.8,False,True
+2025-03-22,FG-CHG-01,충전기 (EV Charger),60,58,96.7,False,True
+2025-03-23,FG-BAT-01,배터리 팩 (Battery Pack),45,46,102.0,False,True
+2025-03-23,FG-MTR-01,전기모터 (Electric Motor),24,22,92.1,False,True
+2025-03-23,FG-INV-01,인버터 (Inverter),36,33,90.5,False,True
+2025-03-23,FG-CHG-01,충전기 (EV Charger),60,60,99.8,False,True
+2025-03-24,FG-BAT-01,배터리 팩 (Battery Pack),150,131,87.4,False,False
+2025-03-24,FG-MTR-01,전기모터 (Electric Motor),80,73,90.7,False,False
+2025-03-24,FG-INV-01,인버터 (Inverter),120,120,100.0,False,False
+2025-03-24,FG-CHG-01,충전기 (EV Charger),200,198,99.1,False,False
+2025-03-25,FG-BAT-01,배터리 팩 (Battery Pack),150,150,99.8,False,False
+2025-03-25,FG-MTR-01,전기모터 (Electric Motor),80,72,90.3,False,False
+2025-03-25,FG-INV-01,인버터 (Inverter),120,62,51.3,True,False
+2025-03-25,FG-CHG-01,충전기 (EV Charger),200,203,101.4,False,False
+2025-03-26,FG-BAT-01,배터리 팩 (Battery Pack),150,151,100.8,False,False
+2025-03-26,FG-MTR-01,전기모터 (Electric Motor),80,30,37.0,True,False
+2025-03-26,FG-INV-01,인버터 (Inverter),120,119,99.1,False,False
+2025-03-26,FG-CHG-01,충전기 (EV Charger),200,206,103.0,False,False
+2025-03-27,FG-BAT-01,배터리 팩 (Battery Pack),150,131,87.5,False,False
+2025-03-27,FG-MTR-01,전기모터 (Electric Motor),80,80,99.4,False,False
+2025-03-27,FG-INV-01,인버터 (Inverter),120,110,91.6,False,False
+2025-03-27,FG-CHG-01,충전기 (EV Charger),200,171,85.5,False,False
+2025-03-28,FG-BAT-01,배터리 팩 (Battery Pack),150,140,93.2,False,False
+2025-03-28,FG-MTR-01,전기모터 (Electric Motor),80,70,87.7,False,False
+2025-03-28,FG-INV-01,인버터 (Inverter),120,122,101.3,False,False
+2025-03-28,FG-CHG-01,충전기 (EV Charger),200,201,100.5,False,False
+2025-03-29,FG-BAT-01,배터리 팩 (Battery Pack),45,43,95.1,False,True
+2025-03-29,FG-MTR-01,전기모터 (Electric Motor),24,24,100.0,False,True
+2025-03-29,FG-INV-01,인버터 (Inverter),36,32,87.7,False,True
+2025-03-29,FG-CHG-01,충전기 (EV Charger),60,62,102.9,False,True
+2025-03-30,FG-BAT-01,배터리 팩 (Battery Pack),45,41,90.8,False,True
+2025-03-30,FG-MTR-01,전기모터 (Electric Motor),24,24,101.7,False,True
+2025-03-30,FG-INV-01,인버터 (Inverter),36,33,91.3,False,True
+2025-03-30,FG-CHG-01,충전기 (EV Charger),60,51,85.8,False,True
+2025-03-31,FG-BAT-01,배터리 팩 (Battery Pack),150,64,43.0,True,False
+2025-03-31,FG-MTR-01,전기모터 (Electric Motor),80,79,98.5,False,False
+2025-03-31,FG-INV-01,인버터 (Inverter),120,106,88.6,False,False
+2025-03-31,FG-CHG-01,충전기 (EV Charger),200,188,94.2,False,False
+2025-04-01,FG-BAT-01,배터리 팩 (Battery Pack),150,151,100.7,False,False
+2025-04-01,FG-MTR-01,전기모터 (Electric Motor),80,75,94.1,False,False
+2025-04-01,FG-INV-01,인버터 (Inverter),120,105,87.3,False,False
+2025-04-01,FG-CHG-01,충전기 (EV Charger),200,203,101.6,False,False
+2025-04-02,FG-BAT-01,배터리 팩 (Battery Pack),150,157,104.6,False,False
+2025-04-02,FG-MTR-01,전기모터 (Electric Motor),80,81,100.8,False,False
+2025-04-02,FG-INV-01,인버터 (Inverter),120,112,93.5,False,False
+2025-04-02,FG-CHG-01,충전기 (EV Charger),200,199,99.4,False,False
+2025-04-03,FG-BAT-01,배터리 팩 (Battery Pack),150,156,103.9,False,False
+2025-04-03,FG-MTR-01,전기모터 (Electric Motor),80,70,87.0,False,False
+2025-04-03,FG-INV-01,인버터 (Inverter),120,117,97.3,False,False
+2025-04-03,FG-CHG-01,충전기 (EV Charger),200,184,91.9,False,False
+2025-04-04,FG-BAT-01,배터리 팩 (Battery Pack),150,138,92.0,False,False
+2025-04-04,FG-MTR-01,전기모터 (Electric Motor),80,82,102.7,False,False
+2025-04-04,FG-INV-01,인버터 (Inverter),120,112,93.1,False,False
+2025-04-04,FG-CHG-01,충전기 (EV Charger),200,205,102.4,False,False
+2025-04-05,FG-BAT-01,배터리 팩 (Battery Pack),45,43,95.3,False,True
+2025-04-05,FG-MTR-01,전기모터 (Electric Motor),24,23,95.3,False,True
+2025-04-05,FG-INV-01,인버터 (Inverter),36,36,98.7,False,True
+2025-04-05,FG-CHG-01,충전기 (EV Charger),60,53,89.0,False,True
+2025-04-06,FG-BAT-01,배터리 팩 (Battery Pack),45,40,88.4,False,True
+2025-04-06,FG-MTR-01,전기모터 (Electric Motor),24,22,93.4,False,True
+2025-04-06,FG-INV-01,인버터 (Inverter),36,32,88.4,False,True
+2025-04-06,FG-CHG-01,충전기 (EV Charger),60,53,88.3,False,True
+2025-04-07,FG-BAT-01,배터리 팩 (Battery Pack),150,137,91.3,False,False
+2025-04-07,FG-MTR-01,전기모터 (Electric Motor),80,76,95.3,False,False
+2025-04-07,FG-INV-01,인버터 (Inverter),120,120,100.0,False,False
+2025-04-07,FG-CHG-01,충전기 (EV Charger),200,200,99.9,False,False
+2025-04-08,FG-BAT-01,배터리 팩 (Battery Pack),150,153,102.2,False,False
+2025-04-08,FG-MTR-01,전기모터 (Electric Motor),80,68,85.2,False,False
+2025-04-08,FG-INV-01,인버터 (Inverter),120,122,102.0,False,False
+2025-04-08,FG-CHG-01,충전기 (EV Charger),200,171,85.7,False,False
+2025-04-09,FG-BAT-01,배터리 팩 (Battery Pack),150,152,101.0,False,False
+2025-04-09,FG-MTR-01,전기모터 (Electric Motor),80,77,95.7,False,False
+2025-04-09,FG-INV-01,인버터 (Inverter),120,119,99.4,False,False
+2025-04-09,FG-CHG-01,충전기 (EV Charger),200,183,91.3,False,False
+2025-04-10,FG-BAT-01,배터리 팩 (Battery Pack),150,142,94.5,False,False
+2025-04-10,FG-MTR-01,전기모터 (Electric Motor),80,74,93.0,False,False
+2025-04-10,FG-INV-01,인버터 (Inverter),120,117,97.5,False,False
+2025-04-10,FG-CHG-01,충전기 (EV Charger),200,185,92.5,False,False
+2025-04-11,FG-BAT-01,배터리 팩 (Battery Pack),150,148,98.9,False,False
+2025-04-11,FG-MTR-01,전기모터 (Electric Motor),80,84,104.9,False,False
+2025-04-11,FG-INV-01,인버터 (Inverter),120,108,90.1,False,False
+2025-04-11,FG-CHG-01,충전기 (EV Charger),200,204,101.9,False,False
+2025-04-12,FG-BAT-01,배터리 팩 (Battery Pack),45,47,104.0,False,True
+2025-04-12,FG-MTR-01,전기모터 (Electric Motor),24,25,104.7,False,True
+2025-04-12,FG-INV-01,인버터 (Inverter),36,36,101.2,False,True
+2025-04-12,FG-CHG-01,충전기 (EV Charger),60,51,85.2,False,True
+2025-04-13,FG-BAT-01,배터리 팩 (Battery Pack),45,41,91.0,False,True
+2025-04-13,FG-MTR-01,전기모터 (Electric Motor),24,23,95.1,False,True
+2025-04-13,FG-INV-01,인버터 (Inverter),36,35,97.7,False,True
+2025-04-13,FG-CHG-01,충전기 (EV Charger),60,52,87.4,False,True
+2025-04-14,FG-BAT-01,배터리 팩 (Battery Pack),150,133,88.7,False,False
+2025-04-14,FG-MTR-01,전기모터 (Electric Motor),80,76,94.8,False,False
+2025-04-14,FG-INV-01,인버터 (Inverter),120,104,87.0,False,False
+2025-04-14,FG-CHG-01,충전기 (EV Charger),200,195,97.6,False,False
+2025-04-15,FG-BAT-01,배터리 팩 (Battery Pack),150,146,97.5,False,False
+2025-04-15,FG-MTR-01,전기모터 (Electric Motor),80,32,39.4,True,False
+2025-04-15,FG-INV-01,인버터 (Inverter),120,109,91.2,False,False
+2025-04-15,FG-CHG-01,충전기 (EV Charger),200,180,89.8,False,False
+2025-04-16,FG-BAT-01,배터리 팩 (Battery Pack),150,156,104.1,False,False
+2025-04-16,FG-MTR-01,전기모터 (Electric Motor),80,69,85.9,False,False
+2025-04-16,FG-INV-01,인버터 (Inverter),120,112,93.1,False,False
+2025-04-16,FG-CHG-01,충전기 (EV Charger),200,195,97.6,False,False
+2025-04-17,FG-BAT-01,배터리 팩 (Battery Pack),150,153,102.0,False,False
+2025-04-17,FG-MTR-01,전기모터 (Electric Motor),80,77,95.9,False,False
+2025-04-17,FG-INV-01,인버터 (Inverter),120,109,90.5,False,False
+2025-04-17,FG-CHG-01,충전기 (EV Charger),200,190,94.8,False,False
+2025-04-18,FG-BAT-01,배터리 팩 (Battery Pack),150,135,89.9,False,False
+2025-04-18,FG-MTR-01,전기모터 (Electric Motor),80,83,103.5,False,False
+2025-04-18,FG-INV-01,인버터 (Inverter),120,109,90.8,False,False
+2025-04-18,FG-CHG-01,충전기 (EV Charger),200,197,98.3,False,False
+2025-04-19,FG-BAT-01,배터리 팩 (Battery Pack),45,47,104.1,False,True
+2025-04-19,FG-MTR-01,전기모터 (Electric Motor),24,23,96.5,False,True
+2025-04-19,FG-INV-01,인버터 (Inverter),36,31,85.3,False,True
+2025-04-19,FG-CHG-01,충전기 (EV Charger),60,61,100.9,False,True
+2025-04-20,FG-BAT-01,배터리 팩 (Battery Pack),45,41,90.6,False,True
+2025-04-20,FG-MTR-01,전기모터 (Electric Motor),24,22,90.1,False,True
+2025-04-20,FG-INV-01,인버터 (Inverter),36,32,87.6,False,True
+2025-04-20,FG-CHG-01,충전기 (EV Charger),60,57,95.2,False,True
+2025-04-21,FG-BAT-01,배터리 팩 (Battery Pack),150,137,91.2,False,False
+2025-04-21,FG-MTR-01,전기모터 (Electric Motor),80,82,102.1,False,False
+2025-04-21,FG-INV-01,인버터 (Inverter),120,111,92.2,False,False
+2025-04-21,FG-CHG-01,충전기 (EV Charger),200,199,99.3,False,False
+2025-04-22,FG-BAT-01,배터리 팩 (Battery Pack),150,156,103.8,False,False
+2025-04-22,FG-MTR-01,전기모터 (Electric Motor),80,76,94.5,False,False
+2025-04-22,FG-INV-01,인버터 (Inverter),120,119,98.8,False,False
+2025-04-22,FG-CHG-01,충전기 (EV Charger),200,210,104.9,False,False
+2025-04-23,FG-BAT-01,배터리 팩 (Battery Pack),150,89,59.1,True,False
+2025-04-23,FG-MTR-01,전기모터 (Electric Motor),80,82,102.5,False,False
+2025-04-23,FG-INV-01,인버터 (Inverter),120,75,62.9,True,False
+2025-04-23,FG-CHG-01,충전기 (EV Charger),200,182,91.2,False,False
+2025-04-24,FG-BAT-01,배터리 팩 (Battery Pack),150,143,95.1,False,False
+2025-04-24,FG-MTR-01,전기모터 (Electric Motor),80,78,98.0,False,False
+2025-04-24,FG-INV-01,인버터 (Inverter),120,106,88.5,False,False
+2025-04-24,FG-CHG-01,충전기 (EV Charger),200,199,99.3,False,False
+2025-04-25,FG-BAT-01,배터리 팩 (Battery Pack),150,50,33.0,True,False
+2025-04-25,FG-MTR-01,전기모터 (Electric Motor),80,74,92.5,False,False
+2025-04-25,FG-INV-01,인버터 (Inverter),120,102,85.1,False,False
+2025-04-25,FG-CHG-01,충전기 (EV Charger),200,96,48.0,True,False
+2025-04-26,FG-BAT-01,배터리 팩 (Battery Pack),45,41,90.1,False,True
+2025-04-26,FG-MTR-01,전기모터 (Electric Motor),24,24,99.1,False,True
+2025-04-26,FG-INV-01,인버터 (Inverter),36,31,87.5,False,True
+2025-04-26,FG-CHG-01,충전기 (EV Charger),60,59,97.7,False,True
+2025-04-27,FG-BAT-01,배터리 팩 (Battery Pack),45,39,86.6,False,True
+2025-04-27,FG-MTR-01,전기모터 (Electric Motor),24,20,85.4,False,True
+2025-04-27,FG-INV-01,인버터 (Inverter),36,34,93.3,False,True
+2025-04-27,FG-CHG-01,충전기 (EV Charger),60,56,94.1,False,True
+2025-04-28,FG-BAT-01,배터리 팩 (Battery Pack),150,144,96.2,False,False
+2025-04-28,FG-MTR-01,전기모터 (Electric Motor),80,78,97.2,False,False
+2025-04-28,FG-INV-01,인버터 (Inverter),120,121,100.8,False,False
+2025-04-28,FG-CHG-01,충전기 (EV Charger),200,180,90.0,False,False
+2025-04-29,FG-BAT-01,배터리 팩 (Battery Pack),150,155,103.2,False,False
+2025-04-29,FG-MTR-01,전기모터 (Electric Motor),80,76,94.7,False,False
+2025-04-29,FG-INV-01,인버터 (Inverter),120,103,86.1,False,False
+2025-04-29,FG-CHG-01,충전기 (EV Charger),200,172,86.0,False,False
+2025-04-30,FG-BAT-01,배터리 팩 (Battery Pack),150,154,102.8,False,False
+2025-04-30,FG-MTR-01,전기모터 (Electric Motor),80,76,94.4,False,False
+2025-04-30,FG-INV-01,인버터 (Inverter),120,125,104.0,False,False
+2025-04-30,FG-CHG-01,충전기 (EV Charger),200,198,99.2,False,False
+2025-05-01,FG-BAT-01,배터리 팩 (Battery Pack),150,152,101.4,False,False
+2025-05-01,FG-MTR-01,전기모터 (Electric Motor),80,75,94.0,False,False
+2025-05-01,FG-INV-01,인버터 (Inverter),120,40,33.0,True,False
+2025-05-01,FG-CHG-01,충전기 (EV Charger),200,175,87.3,False,False
+2025-05-02,FG-BAT-01,배터리 팩 (Battery Pack),150,142,94.4,False,False
+2025-05-02,FG-MTR-01,전기모터 (Electric Motor),80,74,92.9,False,False
+2025-05-02,FG-INV-01,인버터 (Inverter),120,110,91.9,False,False
+2025-05-02,FG-CHG-01,충전기 (EV Charger),200,195,97.5,False,False
+2025-05-03,FG-BAT-01,배터리 팩 (Battery Pack),45,44,98.6,False,True
+2025-05-03,FG-MTR-01,전기모터 (Electric Motor),24,23,97.2,False,True
+2025-05-03,FG-INV-01,인버터 (Inverter),36,36,100.8,False,True
+2025-05-03,FG-CHG-01,충전기 (EV Charger),60,57,95.7,False,True
+2025-05-04,FG-BAT-01,배터리 팩 (Battery Pack),45,45,100.0,False,True
+2025-05-04,FG-MTR-01,전기모터 (Electric Motor),24,25,102.3,False,True
+2025-05-04,FG-INV-01,인버터 (Inverter),36,32,89.7,False,True
+2025-05-04,FG-CHG-01,충전기 (EV Charger),60,52,86.9,False,True
+2025-05-05,FG-BAT-01,배터리 팩 (Battery Pack),150,96,63.8,True,False
+2025-05-05,FG-MTR-01,전기모터 (Electric Motor),80,69,86.2,False,False
+2025-05-05,FG-INV-01,인버터 (Inverter),120,104,87.1,False,False
+2025-05-05,FG-CHG-01,충전기 (EV Charger),200,174,86.8,False,False
+2025-05-06,FG-BAT-01,배터리 팩 (Battery Pack),150,131,87.7,False,False
+2025-05-06,FG-MTR-01,전기모터 (Electric Motor),80,53,65.8,True,False
+2025-05-06,FG-INV-01,인버터 (Inverter),120,103,85.6,False,False
+2025-05-06,FG-CHG-01,충전기 (EV Charger),200,171,85.6,False,False
+2025-05-07,FG-BAT-01,배터리 팩 (Battery Pack),150,143,95.3,False,False
+2025-05-07,FG-MTR-01,전기모터 (Electric Motor),80,73,91.8,False,False
+2025-05-07,FG-INV-01,인버터 (Inverter),120,107,88.8,False,False
+2025-05-07,FG-CHG-01,충전기 (EV Charger),200,179,89.7,False,False
+2025-05-08,FG-BAT-01,배터리 팩 (Battery Pack),150,133,88.7,False,False
+2025-05-08,FG-MTR-01,전기모터 (Electric Motor),80,76,95.3,False,False
+2025-05-08,FG-INV-01,인버터 (Inverter),120,104,86.6,False,False
+2025-05-08,FG-CHG-01,충전기 (EV Charger),200,196,98.1,False,False
+2025-05-09,FG-BAT-01,배터리 팩 (Battery Pack),150,135,89.9,False,False
+2025-05-09,FG-MTR-01,전기모터 (Electric Motor),80,83,103.5,False,False
+2025-05-09,FG-INV-01,인버터 (Inverter),120,111,92.8,False,False
+2025-05-09,FG-CHG-01,충전기 (EV Charger),200,180,90.2,False,False
+2025-05-10,FG-BAT-01,배터리 팩 (Battery Pack),45,45,99.4,False,True
+2025-05-10,FG-MTR-01,전기모터 (Electric Motor),24,23,97.0,False,True
+2025-05-10,FG-INV-01,인버터 (Inverter),36,34,95.3,False,True
+2025-05-10,FG-CHG-01,충전기 (EV Charger),60,61,101.7,False,True
+2025-05-11,FG-BAT-01,배터리 팩 (Battery Pack),45,46,102.8,False,True
+2025-05-11,FG-MTR-01,전기모터 (Electric Motor),24,21,88.5,False,True
+2025-05-11,FG-INV-01,인버터 (Inverter),36,31,87.4,False,True
+2025-05-11,FG-CHG-01,충전기 (EV Charger),60,52,87.1,False,True
+2025-05-12,FG-BAT-01,배터리 팩 (Battery Pack),150,132,87.8,False,False
+2025-05-12,FG-MTR-01,전기모터 (Electric Motor),80,69,86.0,False,False
+2025-05-12,FG-INV-01,인버터 (Inverter),120,73,60.6,True,False
+2025-05-12,FG-CHG-01,충전기 (EV Charger),200,191,95.3,False,False
+2025-05-13,FG-BAT-01,배터리 팩 (Battery Pack),150,143,95.4,False,False
+2025-05-13,FG-MTR-01,전기모터 (Electric Motor),80,81,100.7,False,False
+2025-05-13,FG-INV-01,인버터 (Inverter),120,102,85.1,False,False
+2025-05-13,FG-CHG-01,충전기 (EV Charger),200,185,92.6,False,False
+2025-05-14,FG-BAT-01,배터리 팩 (Battery Pack),150,128,85.2,False,False
+2025-05-14,FG-MTR-01,전기모터 (Electric Motor),80,84,104.7,False,False
+2025-05-14,FG-INV-01,인버터 (Inverter),120,111,92.9,False,False
+2025-05-14,FG-CHG-01,충전기 (EV Charger),200,203,101.3,False,False
+2025-05-15,FG-BAT-01,배터리 팩 (Battery Pack),150,137,91.2,False,False
+2025-05-15,FG-MTR-01,전기모터 (Electric Motor),80,79,98.5,False,False
+2025-05-15,FG-INV-01,인버터 (Inverter),120,104,86.4,False,False
+2025-05-15,FG-CHG-01,충전기 (EV Charger),200,179,89.4,False,False
+2025-05-16,FG-BAT-01,배터리 팩 (Battery Pack),150,88,58.6,True,False
+2025-05-16,FG-MTR-01,전기모터 (Electric Motor),80,72,90.4,False,False
+2025-05-16,FG-INV-01,인버터 (Inverter),120,60,50.4,True,False
+2025-05-16,FG-CHG-01,충전기 (EV Charger),200,176,87.8,False,False
+2025-05-17,FG-BAT-01,배터리 팩 (Battery Pack),45,46,102.4,False,True
+2025-05-17,FG-MTR-01,전기모터 (Electric Motor),24,23,93.9,False,True
+2025-05-17,FG-INV-01,인버터 (Inverter),36,36,99.3,False,True
+2025-05-17,FG-CHG-01,충전기 (EV Charger),60,54,90.4,False,True

@@ -1,0 +1,124 @@
+# 009 Supply Chain Mini-Twin 인프라
+# PostgreSQL + n8n + Redash
+
+networks:
+  scm-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  n8n-data:
+  redash-data:
+
+services:
+  # ============================================================
+  # PostgreSQL 데이터베이스
+  # ============================================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: scm-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: supply_chain_db
+      POSTGRES_USER: n8n_user
+      POSTGRES_PASSWORD: n8n_pass
+    ports:
+      - "5900:5432"  # Hyper-V 예약 범위(5058~5826) 회피
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ../scripts/init_db.sql:/docker-entrypoint-initdb.d/01_init.sql
+    networks:
+      - scm-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U n8n_user -d supply_chain_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================
+  # n8n 워크플로우 자동화
+  # ============================================================
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: scm-n8n
+    restart: unless-stopped
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=supply_chain_db
+      - DB_POSTGRESDB_USER=n8n_user
+      - DB_POSTGRESDB_PASSWORD=n8n_pass
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=scm2025!
+      - GENERIC_TIMEZONE=Asia/Seoul
+      - TZ=Asia/Seoul
+    ports:
+      - "5902:5678"  # Hyper-V 예약 범위(5627~5826) 회피
+    volumes:
+      - n8n-data:/home/node/.n8n
+    networks:
+      - scm-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # ============================================================
+  # Redash 대시보드 (경량 BI)
+  # ============================================================
+  redash-server:
+    image: redash/redash:25.1.0
+    container_name: scm-redash
+    restart: unless-stopped
+    environment:
+      REDASH_DATABASE_URL: "postgresql://n8n_user:n8n_pass@postgres:5432/supply_chain_db"
+      REDASH_REDIS_URL: "redis://redis:6379/0"
+      REDASH_SECRET_KEY: "scm-redash-secret-2025"
+      REDASH_COOKIE_SECRET: "scm-cookie-secret-2025"
+    ports:
+      - "5901:5000"  # Hyper-V 예약 범위 회피
+    networks:
+      - scm-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  redash-scheduler:
+    image: redash/redash:25.1.0
+    container_name: scm-redash-scheduler
+    restart: unless-stopped
+    command: scheduler
+    environment:
+      REDASH_DATABASE_URL: "postgresql://n8n_user:n8n_pass@postgres:5432/supply_chain_db"
+      REDASH_REDIS_URL: "redis://redis:6379/0"
+      REDASH_SECRET_KEY: "scm-redash-secret-2025"
+      REDASH_COOKIE_SECRET: "scm-cookie-secret-2025"
+    networks:
+      - scm-network
+    depends_on:
+      - redash-server
+
+  redash-worker:
+    image: redash/redash:25.1.0
+    container_name: scm-redash-worker
+    restart: unless-stopped
+    command: worker
+    environment:
+      REDASH_DATABASE_URL: "postgresql://n8n_user:n8n_pass@postgres:5432/supply_chain_db"
+      REDASH_REDIS_URL: "redis://redis:6379/0"
+      REDASH_SECRET_KEY: "scm-redash-secret-2025"
+      REDASH_COOKIE_SECRET: "scm-cookie-secret-2025"
+    networks:
+      - scm-network
+    depends_on:
+      - redash-server
+
+  redis:
+    image: redis:7-alpine
+    container_name: scm-redis
+    restart: unless-stopped
+    networks:
+      - scm-network

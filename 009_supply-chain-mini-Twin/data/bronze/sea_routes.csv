@@ -1,0 +1,225 @@
+﻿route_id,origin_port,dest_port,origin_name,dest_name,sequence,latitude,longitude,distance_nm,point_type
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),0,31.2304,121.4737,520,waypoint
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),1,31.5477,121.823,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),2,31.865,122.1723,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),3,32.1823,122.5216,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),4,32.4996,122.4993,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),5,32.8169,122.7871,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),6,33.1342,123.0939,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),7,33.4515,123.4214,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),8,33.7689,123.7707,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),9,34.0862,124.1418,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),10,34.4035,124.5336,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),11,34.7208,124.9443,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),12,35.0381,125.6651,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),13,35.3554,126.0144,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),14,35.6727,126.3637,520,intermediate
+CNSHA-KRGUN,CNSHA,KRGUN,상하이항 (Shanghai),군산항 (Gunsan),15,35.99,126.713,520,waypoint
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),0,31.2304,121.4737,530,waypoint
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),1,31.5364,121.8201,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),2,31.8423,122.1665,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),3,32.1483,122.513,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),4,32.4543,122.4878,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),5,32.7603,122.7728,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),6,33.0662,123.0767,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),7,33.3722,123.4014,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),8,33.6782,123.7478,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),9,33.9842,124.116,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),10,34.2901,124.5049,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),11,34.5961,124.9127,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),12,34.9021,125.6307,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),13,35.2081,125.9772,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),14,35.514,126.3236,530,intermediate
+CNSHA-KRSMG,CNSHA,KRSMG,상하이항 (Shanghai),새만금항 (Saemangeum),15,35.82,126.67,530,waypoint
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),0,36.0671,120.3826,380,waypoint
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),1,36.062,120.8046,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),2,36.0568,121.2267,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),3,36.0517,121.6487,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),4,36.0465,121.6991,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),5,36.0414,122.0597,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),6,36.0363,122.4392,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),7,36.0311,122.8395,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),8,36.026,123.2616,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),9,36.0208,123.7053,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),10,36.0157,124.1699,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),11,36.0106,124.6533,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),12,36.0054,125.4469,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),13,36.0003,125.8689,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),14,35.9951,126.291,380,intermediate
+CNQDG-KRGUN,CNQDG,KRGUN,칭다오항 (Qingdao),군산항 (Gunsan),15,35.99,126.713,380,waypoint
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),0,36.0671,120.3826,390,waypoint
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),1,36.0506,120.8018,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),2,36.0342,121.2209,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),3,36.0177,121.6401,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),4,36.0012,121.6877,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),5,35.9847,122.0454,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),6,35.9683,122.422,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),7,35.9518,122.8195,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),8,35.9353,123.2386,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),9,35.9188,123.6795,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),10,35.9024,124.1412,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),11,35.8859,124.6218,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),12,35.8694,125.4125,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),13,35.8529,125.8317,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),14,35.8365,126.2508,390,intermediate
+CNQDG-KRSMG,CNQDG,KRSMG,칭다오항 (Qingdao),새만금항 (Saemangeum),15,35.82,126.67,390,waypoint
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),0,29.8683,121.544,560,waypoint
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),1,30.2764,121.8886,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),2,30.6845,122.2332,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),3,31.0926,122.5778,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),4,31.5008,122.5508,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),5,31.9089,122.834,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),6,32.317,123.1361,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),7,32.7251,123.4589,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),8,33.1332,123.8035,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),9,33.5413,124.1699,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),10,33.9494,124.557,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),11,34.3575,124.963,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),12,34.7657,125.6792,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),13,35.1738,126.0238,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),14,35.5819,126.3684,560,intermediate
+CNNBO-KRGUN,CNNBO,KRGUN,닝보항 (Ningbo),군산항 (Gunsan),15,35.99,126.713,560,waypoint
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),0,29.8683,121.544,570,waypoint
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),1,30.2651,121.8857,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),2,30.6619,122.2275,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),3,31.0586,122.5692,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),4,31.4554,122.5394,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),5,31.8522,122.8197,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),6,32.249,123.1189,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),7,32.6458,123.4389,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),8,33.0425,123.7806,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),9,33.4393,124.1441,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),10,33.8361,124.5283,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),11,34.2329,124.9315,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),12,34.6297,125.6448,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),13,35.0264,125.9865,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),14,35.4232,126.3283,570,intermediate
+CNNBO-KRSMG,CNNBO,KRSMG,닝보항 (Ningbo),새만금항 (Saemangeum),15,35.82,126.67,570,waypoint
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),0,39.0842,117.201,480,waypoint
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),1,38.8779,117.8351,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),2,38.6716,118.4693,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),3,38.4654,119.1034,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),4,38.2591,119.366,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),5,38.0528,119.9387,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),6,37.8465,120.5303,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),7,37.6402,121.1427,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),8,37.434,121.7768,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),9,37.2277,122.4327,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),10,37.0214,123.1093,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),11,36.8151,123.8049,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),12,36.6088,124.8106,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),13,36.4026,125.4447,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),14,36.1963,126.0789,480,intermediate
+CNTSN-KRGUN,CNTSN,KRGUN,톈진항 (Tianjin),군산항 (Gunsan),15,35.99,126.713,480,waypoint
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),0,39.0842,117.201,490,waypoint
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),1,38.8666,117.8323,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),2,38.649,118.4635,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),3,38.4314,119.0948,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),4,38.2137,119.3545,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),5,37.9961,119.9243,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),6,37.7785,120.5131,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),7,37.5609,121.1226,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),8,37.3433,121.7539,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),9,37.1257,122.4069,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),10,36.9081,123.0807,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),11,36.6905,123.7734,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),12,36.4728,124.7762,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),13,36.2552,125.4075,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),14,36.0376,126.0387,490,intermediate
+CNTSN-KRSMG,CNTSN,KRSMG,톈진항 (Tianjin),새만금항 (Saemangeum),15,35.82,126.67,490,waypoint
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),0,38.914,121.6147,420,waypoint
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),1,38.7191,121.9546,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),2,38.5241,122.2945,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),3,38.3292,122.6344,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),4,38.1343,122.6027,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),5,37.9393,122.8811,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),6,37.7444,123.1785,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),7,37.5495,123.4966,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),8,37.3545,123.8365,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),9,37.1596,124.1982,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),10,36.9647,124.5806,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),11,36.7697,124.9819,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),12,36.5748,125.6933,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),13,36.3799,126.0332,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),14,36.1849,126.3731,420,intermediate
+CNDLC-KRGUN,CNDLC,KRGUN,다롄항 (Dalian),군산항 (Gunsan),15,35.99,126.713,420,waypoint
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),0,38.914,121.6147,430,waypoint
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),1,38.7077,121.9517,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),2,38.5015,122.2887,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),3,38.2952,122.6258,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),4,38.0889,122.5912,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),5,37.8827,122.8668,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),6,37.6764,123.1613,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),7,37.4701,123.4766,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),8,37.2639,123.8136,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),9,37.0576,124.1724,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),10,36.8513,124.5519,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),11,36.6451,124.9503,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),12,36.4388,125.6589,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),13,36.2325,125.996,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),14,36.0263,126.333,430,intermediate
+CNDLC-KRSMG,CNDLC,KRSMG,다롄항 (Dalian),새만금항 (Saemangeum),15,35.82,126.67,430,waypoint
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),0,35.6532,139.7965,680,waypoint
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),1,35.6757,138.9243,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),2,35.6981,138.052,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),3,35.7206,137.1798,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),4,35.743,135.936,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),5,35.7655,135.0023,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),6,35.7879,134.0876,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),7,35.8104,133.1936,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),8,35.8328,132.3214,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),9,35.8553,131.4709,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),10,35.8777,130.6412,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),11,35.9002,129.8304,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),12,35.9226,129.3297,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),13,35.9451,128.4575,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),14,35.9675,127.5852,680,intermediate
+JPTYO-KRGUN,JPTYO,KRGUN,도쿄항 (Tokyo),군산항 (Gunsan),15,35.99,126.713,680,waypoint
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),0,35.6532,139.7965,690,waypoint
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),1,35.6643,138.9214,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),2,35.6754,138.0463,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),3,35.6866,137.1712,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),4,35.6977,135.9245,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),5,35.7088,134.988,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),6,35.7199,134.0704,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),7,35.731,133.1735,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),8,35.7422,132.2984,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),9,35.7533,131.4451,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),10,35.7644,130.6125,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),11,35.7755,129.7988,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),12,35.7866,129.2953,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),13,35.7978,128.4202,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),14,35.8089,127.5451,690,intermediate
+JPTYO-KRSMG,JPTYO,KRSMG,도쿄항 (Tokyo),새만금항 (Saemangeum),15,35.82,126.67,690,waypoint
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),0,20.8449,106.6881,1350,waypoint
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),1,21.8546,108.0231,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),2,22.8642,109.3581,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),3,23.8739,110.6931,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),4,24.8836,111.6565,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),5,25.8933,112.9301,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),6,26.9029,114.2225,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),7,27.9126,115.5358,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),8,28.9223,116.8708,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),9,29.932,118.2275,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),10,30.9416,119.605,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),11,31.9513,121.0015,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),12,32.961,122.708,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),13,33.9707,124.043,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),14,34.9803,125.378,1350,intermediate
+VNHPH-KRGUN,VNHPH,KRGUN,하이퐁항 (Hai Phong),군산항 (Gunsan),15,35.99,126.713,1350,waypoint
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),0,20.8449,106.6881,1360,waypoint
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),1,21.8432,108.0202,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),2,22.8416,109.3524,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),3,23.8399,110.6845,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),4,24.8383,111.645,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),5,25.8366,112.9157,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),6,26.8349,114.2053,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),7,27.8333,115.5157,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),8,28.8316,116.8479,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),9,29.83,118.2017,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),10,30.8283,119.5764,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),11,31.8266,120.9699,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),12,32.825,122.6736,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),13,33.8233,124.0057,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),14,34.8217,125.3379,1360,intermediate
+VNHPH-KRSMG,VNHPH,KRSMG,하이퐁항 (Hai Phong),새만금항 (Saemangeum),15,35.82,126.67,1360,waypoint

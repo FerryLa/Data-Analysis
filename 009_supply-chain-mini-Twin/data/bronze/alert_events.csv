@@ -1,0 +1,315 @@
+﻿alert_id,alert_type,alert_name,severity,timestamp,reference_id,message,resolved
+ALT-101,A1,ETA 지연,MEDIUM,2025-02-18 00:41,SH-1004,"선박 GUNSAN GLORY ETA 8시간 지연. 원자재: 열연강판 (Hot-Rolled Steel), 출발항: 하이퐁항 (Hai Phong)",True
+ALT-102,A1,ETA 지연,HIGH,2025-02-19 15:23,SH-1008,"선박 YELLOW SEA STAR ETA 24시간 지연. 원자재: 전해동판 (Copper Cathode), 출발항: 다롄항 (Dalian)",True
+ALT-103,A1,ETA 지연,MEDIUM,2025-02-21 13:44,SH-1017,"선박 DONGBANG EXPRESS ETA 6시간 지연. 원자재: PCB 기판 (Printed Circuit Board), 출발항: 상하이항 (Shanghai)",True
+ALT-104,A1,ETA 지연,MEDIUM,2025-02-25 22:23,SH-1025,"선박 WEST SEA PRIDE ETA 6시간 지연. 원자재: PE 수지 (Polyethylene), 출발항: 닝보항 (Ningbo)",True
+ALT-105,A1,ETA 지연,MEDIUM,2025-03-04 05:13,SH-1038,"선박 SUNRISE JEONBUK ETA 12시간 지연. 원자재: PCB 기판 (Printed Circuit Board), 출발항: 다롄항 (Dalian)",True
+ALT-106,A1,ETA 지연,MEDIUM,2025-03-07 06:18,SH-1051,"선박 WEST SEA PRIDE ETA 6시간 지연. 원자재: PCB 기판 (Printed Circuit Board), 출발항: 닝보항 (Ningbo)",True
+ALT-107,A1,ETA 지연,HIGH,2025-03-13 08:55,SH-1060,"선박 SUNRISE JEONBUK ETA 24시간 지연. 원자재: 전해동판 (Copper Cathode), 출발항: 상하이항 (Shanghai)",True
+ALT-108,A1,ETA 지연,HIGH,2025-03-14 16:08,SH-1063,"선박 KORYO DRAGON ETA 24시간 지연. 원자재: BMS 모듈 (Battery Management), 출발항: 닝보항 (Ningbo)",False
+ALT-109,A1,ETA 지연,HIGH,2025-03-22 20:16,SH-1085,"선박 GUNSAN GLORY ETA 24시간 지연. 원자재: 열연강판 (Hot-Rolled Steel), 출발항: 닝보항 (Ningbo)",True
+ALT-110,A1,ETA 지연,MEDIUM,2025-03-24 11:17,SH-1090,"선박 SUNRISE JEONBUK ETA 6시간 지연. 원자재: 리튬 (Lithium Carbonate), 출발항: 칭다오항 (Qingdao)",False
+ALT-111,A1,ETA 지연,MEDIUM,2025-03-25 05:48,SH-1091,"선박 DONGBANG EXPRESS ETA 12시간 지연. 원자재: 열연강판 (Hot-Rolled Steel), 출발항: 톈진항 (Tianjin)",True
+ALT-112,A1,ETA 지연,MEDIUM,2025-03-25 17:29,SH-1094,"선박 DONGBANG EXPRESS ETA 12시간 지연. 원자재: 전해동판 (Copper Cathode), 출발항: 칭다오항 (Qingdao)",True
+ALT-113,A1,ETA 지연,MEDIUM,2025-03-26 13:55,SH-1099,"선박 GUNSAN GLORY ETA 6시간 지연. 원자재: BMS 모듈 (Battery Management), 출발항: 다롄항 (Dalian)",True
+ALT-114,A1,ETA 지연,HIGH,2025-03-31 00:54,SH-1111,"선박 YELLOW SEA STAR ETA 24시간 지연. 원자재: PE 수지 (Polyethylene), 출발항: 상하이항 (Shanghai)",True
+ALT-115,A1,ETA 지연,MEDIUM,2025-03-31 18:09,SH-1114,"선박 WEST SEA PRIDE ETA 12시간 지연. 원자재: 알루미늄 잉곳 (Aluminum Ingot), 출발항: 상하이항 (Shanghai)",False
+ALT-116,A1,ETA 지연,MEDIUM,2025-04-04 20:28,SH-1126,"선박 SUNRISE JEONBUK ETA 6시간 지연. 원자재: 합성고무 (Synthetic Rubber), 출발항: 상하이항 (Shanghai)",True
+ALT-117,A1,ETA 지연,HIGH,2025-04-09 17:26,SH-1135,"선박 KORYO DRAGON ETA 36시간 지연. 원자재: 전해동판 (Copper Cathode), 출발항: 다롄항 (Dalian)",True
+ALT-118,A1,ETA 지연,HIGH,2025-04-20 03:21,SH-1161,"선박 DONGBANG EXPRESS ETA 36시간 지연. 원자재: 리튬 (Lithium Carbonate), 출발항: 칭다오항 (Qingdao)",True
+ALT-119,A1,ETA 지연,MEDIUM,2025-04-19 21:27,SH-1166,"선박 SAEMANGEUM BRIDGE ETA 8시간 지연. 원자재: 리튬 (Lithium Carbonate), 출발항: 칭다오항 (Qingdao)",False
+ALT-120,A1,ETA 지연,MEDIUM,2025-04-23 19:33,SH-1174,"선박 SAEMANGEUM BRIDGE ETA 8시간 지연. 원자재: 열연강판 (Hot-Rolled Steel), 출발항: 톈진항 (Tianjin)",True
+ALT-121,A1,ETA 지연,MEDIUM,2025-04-28 15:47,SH-1192,"선박 KORYO DRAGON ETA 12시간 지연. 원자재: 전해동판 (Copper Cathode), 출발항: 닝보항 (Ningbo)",False
+ALT-122,A1,ETA 지연,HIGH,2025-05-02 11:26,SH-1198,"선박 KORYO DRAGON ETA 24시간 지연. 원자재: 열연강판 (Hot-Rolled Steel), 출발항: 도쿄항 (Tokyo)",False
+ALT-123,A1,ETA 지연,MEDIUM,2025-05-16 13:28,SH-1234,"선박 GUNSAN GLORY ETA 6시간 지연. 원자재: PCB 기판 (Printed Circuit Board), 출발항: 하이퐁항 (Hai Phong)",True
+ALT-124,A2,재고 커버리지 부족,HIGH,2025-03-28,RM-STL-01,열연강판 (Hot-Rolled Steel) 재고일수 5.0일. 현재고: 248.8톤,False
+ALT-125,A2,재고 커버리지 부족,HIGH,2025-03-29,RM-STL-01,열연강판 (Hot-Rolled Steel) 재고일수 4.1일. 현재고: 206.7톤,False
+ALT-126,A2,재고 커버리지 부족,HIGH,2025-03-30,RM-STL-01,열연강판 (Hot-Rolled Steel) 재고일수 3.2일. 현재고: 161.1톤,True
+ALT-127,A2,재고 커버리지 부족,HIGH,2025-03-31,RM-STL-01,열연강판 (Hot-Rolled Steel) 재고일수 2.3일. 현재고: 115.0톤,True
+ALT-128,A2,재고 커버리지 부족,CRITICAL,2025-04-01,RM-STL-01,열연강판 (Hot-Rolled Steel) 재고일수 1.3일. 현재고: 63.4톤,False
+ALT-129,A2,재고 커버리지 부족,CRITICAL,2025-04-02,RM-STL-01,열연강판 (Hot-Rolled Steel) 재고일수 0.4일. 현재고: 21.4톤,True
+ALT-130,A2,재고 커버리지 부족,CRITICAL,2025-04-03,RM-STL-01,열연강판 (Hot-Rolled Steel) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-131,A2,재고 커버리지 부족,HIGH,2025-03-12,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 4.4일. 현재고: 88.9톤,True
+ALT-132,A2,재고 커버리지 부족,HIGH,2025-03-13,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 3.6일. 현재고: 71.8톤,True
+ALT-133,A2,재고 커버리지 부족,HIGH,2025-03-14,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 2.6일. 현재고: 52.6톤,True
+ALT-134,A2,재고 커버리지 부족,CRITICAL,2025-03-15,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 1.6일. 현재고: 31.5톤,True
+ALT-135,A2,재고 커버리지 부족,CRITICAL,2025-03-16,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.4일. 현재고: 7.9톤,False
+ALT-136,A2,재고 커버리지 부족,CRITICAL,2025-03-17,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-137,A2,재고 커버리지 부족,HIGH,2025-03-21,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 4.9일. 현재고: 98.2톤,True
+ALT-138,A2,재고 커버리지 부족,HIGH,2025-03-22,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 4.0일. 현재고: 79.8톤,False
+ALT-139,A2,재고 커버리지 부족,HIGH,2025-03-23,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 2.9일. 현재고: 57.5톤,False
+ALT-140,A2,재고 커버리지 부족,CRITICAL,2025-03-24,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 1.7일. 현재고: 34.7톤,False
+ALT-141,A2,재고 커버리지 부족,CRITICAL,2025-03-25,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.6일. 현재고: 12.4톤,True
+ALT-142,A2,재고 커버리지 부족,HIGH,2025-03-26,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 3.7일. 현재고: 74.9톤,True
+ALT-143,A2,재고 커버리지 부족,HIGH,2025-03-27,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 2.7일. 현재고: 54.7톤,False
+ALT-144,A2,재고 커버리지 부족,CRITICAL,2025-03-28,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 1.8일. 현재고: 36.8톤,False
+ALT-145,A2,재고 커버리지 부족,CRITICAL,2025-03-29,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 1.0일. 현재고: 20.8톤,False
+ALT-146,A2,재고 커버리지 부족,CRITICAL,2025-03-30,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-147,A2,재고 커버리지 부족,CRITICAL,2025-03-31,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-148,A2,재고 커버리지 부족,HIGH,2025-04-02,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 4.4일. 현재고: 87.3톤,False
+ALT-149,A2,재고 커버리지 부족,HIGH,2025-04-03,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 3.4일. 현재고: 68.2톤,True
+ALT-150,A2,재고 커버리지 부족,HIGH,2025-04-04,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 2.3일. 현재고: 45.4톤,True
+ALT-151,A2,재고 커버리지 부족,HIGH,2025-04-10,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 4.4일. 현재고: 87.8톤,False
+ALT-152,A2,재고 커버리지 부족,HIGH,2025-04-11,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 3.4일. 현재고: 68.6톤,True
+ALT-153,A2,재고 커버리지 부족,HIGH,2025-04-12,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 2.3일. 현재고: 45.5톤,True
+ALT-154,A2,재고 커버리지 부족,CRITICAL,2025-04-13,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 1.4일. 현재고: 27.4톤,False
+ALT-155,A2,재고 커버리지 부족,CRITICAL,2025-04-14,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.6일. 현재고: 11.2톤,True
+ALT-156,A2,재고 커버리지 부족,CRITICAL,2025-04-15,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-157,A2,재고 커버리지 부족,CRITICAL,2025-04-16,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-158,A2,재고 커버리지 부족,CRITICAL,2025-04-17,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-159,A2,재고 커버리지 부족,CRITICAL,2025-04-18,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-160,A2,재고 커버리지 부족,CRITICAL,2025-04-19,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-161,A2,재고 커버리지 부족,CRITICAL,2025-04-20,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-162,A2,재고 커버리지 부족,HIGH,2025-05-02,RM-CPR-01,전해동판 (Copper Cathode) 재고일수 4.9일. 현재고: 39.4톤,True
+ALT-163,A2,재고 커버리지 부족,HIGH,2025-05-03,RM-CPR-01,전해동판 (Copper Cathode) 재고일수 4.1일. 현재고: 32.6톤,True
+ALT-164,A2,재고 커버리지 부족,HIGH,2025-05-07,RM-CPR-01,전해동판 (Copper Cathode) 재고일수 4.4일. 현재고: 35.4톤,False
+ALT-165,A2,재고 커버리지 부족,HIGH,2025-05-08,RM-CPR-01,전해동판 (Copper Cathode) 재고일수 3.4일. 현재고: 26.9톤,True
+ALT-166,A2,재고 커버리지 부족,HIGH,2025-05-09,RM-CPR-01,전해동판 (Copper Cathode) 재고일수 2.5일. 현재고: 19.8톤,False
+ALT-167,A2,재고 커버리지 부족,HIGH,2025-05-14,RM-CPR-01,전해동판 (Copper Cathode) 재고일수 4.8일. 현재고: 38.8톤,True
+ALT-168,A2,재고 커버리지 부족,HIGH,2025-05-15,RM-CPR-01,전해동판 (Copper Cathode) 재고일수 3.7일. 현재고: 29.6톤,False
+ALT-169,A2,재고 커버리지 부족,HIGH,2025-05-16,RM-CPR-01,전해동판 (Copper Cathode) 재고일수 2.5일. 현재고: 20.4톤,False
+ALT-170,A2,재고 커버리지 부족,CRITICAL,2025-05-17,RM-CPR-01,전해동판 (Copper Cathode) 재고일수 1.4일. 현재고: 11.2톤,True
+ALT-171,A2,재고 커버리지 부족,HIGH,2025-03-16,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 4.8일. 현재고: 143.1톤,True
+ALT-172,A2,재고 커버리지 부족,HIGH,2025-03-17,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 3.8일. 현재고: 113.4톤,False
+ALT-173,A2,재고 커버리지 부족,HIGH,2025-03-18,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 3.0일. 현재고: 88.9톤,False
+ALT-174,A2,재고 커버리지 부족,CRITICAL,2025-03-19,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 1.9일. 현재고: 56.8톤,False
+ALT-175,A2,재고 커버리지 부족,CRITICAL,2025-03-20,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 1.0일. 현재고: 31.3톤,True
+ALT-176,A2,재고 커버리지 부족,CRITICAL,2025-03-21,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-177,A2,재고 커버리지 부족,CRITICAL,2025-03-22,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-178,A2,재고 커버리지 부족,CRITICAL,2025-03-23,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-179,A2,재고 커버리지 부족,CRITICAL,2025-03-24,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-180,A2,재고 커버리지 부족,CRITICAL,2025-03-25,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-181,A2,재고 커버리지 부족,CRITICAL,2025-03-26,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-182,A2,재고 커버리지 부족,CRITICAL,2025-03-27,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-183,A2,재고 커버리지 부족,CRITICAL,2025-03-28,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-184,A2,재고 커버리지 부족,CRITICAL,2025-03-29,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-185,A2,재고 커버리지 부족,CRITICAL,2025-03-30,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-186,A2,재고 커버리지 부족,CRITICAL,2025-03-31,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-187,A2,재고 커버리지 부족,CRITICAL,2025-04-01,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-188,A2,재고 커버리지 부족,HIGH,2025-04-04,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 4.1일. 현재고: 122.1톤,False
+ALT-189,A2,재고 커버리지 부족,HIGH,2025-04-05,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 3.0일. 현재고: 90.0톤,False
+ALT-190,A2,재고 커버리지 부족,CRITICAL,2025-04-06,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 2.0일. 현재고: 60.8톤,False
+ALT-191,A2,재고 커버리지 부족,CRITICAL,2025-04-07,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 1.2일. 현재고: 35.1톤,False
+ALT-192,A2,재고 커버리지 부족,CRITICAL,2025-04-08,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.3일. 현재고: 10.0톤,True
+ALT-193,A2,재고 커버리지 부족,CRITICAL,2025-04-09,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-194,A2,재고 커버리지 부족,HIGH,2025-04-16,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 4.1일. 현재고: 122.5톤,False
+ALT-195,A2,재고 커버리지 부족,HIGH,2025-04-17,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 2.9일. 현재고: 88.2톤,False
+ALT-196,A2,재고 커버리지 부족,CRITICAL,2025-04-18,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 2.0일. 현재고: 60.7톤,True
+ALT-197,A2,재고 커버리지 부족,CRITICAL,2025-04-19,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 1.0일. 현재고: 31.4톤,True
+ALT-198,A2,재고 커버리지 부족,CRITICAL,2025-04-20,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.1톤,False
+ALT-199,A2,재고 커버리지 부족,CRITICAL,2025-04-21,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-200,A2,재고 커버리지 부족,CRITICAL,2025-04-22,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-201,A2,재고 커버리지 부족,CRITICAL,2025-04-23,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-202,A2,재고 커버리지 부족,CRITICAL,2025-04-24,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-203,A2,재고 커버리지 부족,HIGH,2025-04-25,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 2.9일. 현재고: 85.6톤,False
+ALT-204,A2,재고 커버리지 부족,CRITICAL,2025-04-26,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 1.7일. 현재고: 51.1톤,False
+ALT-205,A2,재고 커버리지 부족,CRITICAL,2025-04-27,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.7일. 현재고: 22.2톤,True
+ALT-206,A2,재고 커버리지 부족,CRITICAL,2025-04-28,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-207,A2,재고 커버리지 부족,HIGH,2025-04-29,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 2.8일. 현재고: 84.2톤,False
+ALT-208,A2,재고 커버리지 부족,CRITICAL,2025-04-30,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 1.8일. 현재고: 53.1톤,True
+ALT-209,A2,재고 커버리지 부족,CRITICAL,2025-05-01,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.7일. 현재고: 19.7톤,True
+ALT-210,A2,재고 커버리지 부족,CRITICAL,2025-05-02,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-211,A2,재고 커버리지 부족,CRITICAL,2025-05-03,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-212,A2,재고 커버리지 부족,CRITICAL,2025-05-04,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,True
+ALT-213,A2,재고 커버리지 부족,CRITICAL,2025-05-05,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 0.0일. 현재고: 0.0톤,False
+ALT-214,A2,재고 커버리지 부족,HIGH,2025-05-07,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 4.9일. 현재고: 147.6톤,True
+ALT-215,A2,재고 커버리지 부족,HIGH,2025-05-08,RM-PLS-01,PE 수지 (Polyethylene) 재고일수 4.1일. 현재고: 121.9톤,True
+ALT-216,A2,재고 커버리지 부족,HIGH,2025-02-23,CP-PCB-01,PCB 기판 (Printed Circuit Board) 재고일수 4.6일. 현재고: 2311.1매,False
+ALT-217,A2,재고 커버리지 부족,HIGH,2025-02-24,CP-PCB-01,PCB 기판 (Printed Circuit Board) 재고일수 3.5일. 현재고: 1733.1매,True
+ALT-218,A2,재고 커버리지 부족,HIGH,2025-02-25,CP-PCB-01,PCB 기판 (Printed Circuit Board) 재고일수 2.4일. 현재고: 1198.0매,False
+ALT-219,A2,재고 커버리지 부족,CRITICAL,2025-02-26,CP-PCB-01,PCB 기판 (Printed Circuit Board) 재고일수 1.6일. 현재고: 786.1매,False
+ALT-220,A3,생산 라인 스톱 위험,CRITICAL,2025-03-25,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-221,A3,생산 라인 스톱 위험,CRITICAL,2025-03-27,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 19.6%,True
+ALT-222,A3,생산 라인 스톱 위험,CRITICAL,2025-03-17,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-223,A3,생산 라인 스톱 위험,CRITICAL,2025-04-29,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 20.0%,False
+ALT-224,A3,생산 라인 스톱 위험,CRITICAL,2025-03-27,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-225,A3,생산 라인 스톱 위험,CRITICAL,2025-03-28,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,True
+ALT-226,A3,생산 라인 스톱 위험,CRITICAL,2025-03-24,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 12.4%,False
+ALT-227,A3,생산 라인 스톱 위험,CRITICAL,2025-04-08,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 2.4%,False
+ALT-228,A3,생산 라인 스톱 위험,CRITICAL,2025-05-17,RM-CPR-01,전해동판 (Copper Cathode) 재고 부족으로 생산 중단 위험. 커버리지: 10.0%,False
+ALT-229,A3,생산 라인 스톱 위험,CRITICAL,2025-03-26,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-230,A3,생산 라인 스톱 위험,CRITICAL,2025-03-31,RM-STL-01,열연강판 (Hot-Rolled Steel) 재고 부족으로 생산 중단 위험. 커버리지: 16.4%,False
+ALT-231,A3,생산 라인 스톱 위험,CRITICAL,2025-04-19,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,True
+ALT-232,A3,생산 라인 스톱 위험,CRITICAL,2025-03-29,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 7.4%,True
+ALT-233,A3,생산 라인 스톱 위험,CRITICAL,2025-04-28,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-234,A3,생산 라인 스톱 위험,CRITICAL,2025-03-21,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-235,A3,생산 라인 스톱 위험,CRITICAL,2025-04-23,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,True
+ALT-236,A3,생산 라인 스톱 위험,CRITICAL,2025-03-28,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 13.1%,True
+ALT-237,A3,생산 라인 스톱 위험,CRITICAL,2025-04-17,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 21.0%,True
+ALT-238,A3,생산 라인 스톱 위험,CRITICAL,2025-04-05,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 21.4%,False
+ALT-239,A3,생산 라인 스톱 위험,CRITICAL,2025-04-16,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,True
+ALT-240,A3,생산 라인 스톱 위험,CRITICAL,2025-03-24,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-241,A3,생산 라인 스톱 위험,CRITICAL,2025-03-23,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-242,A3,생산 라인 스톱 위험,CRITICAL,2025-04-18,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,True
+ALT-243,A3,생산 라인 스톱 위험,CRITICAL,2025-03-30,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-244,A3,생산 라인 스톱 위험,CRITICAL,2025-04-27,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 5.3%,True
+ALT-245,A3,생산 라인 스톱 위험,CRITICAL,2025-05-09,RM-CPR-01,전해동판 (Copper Cathode) 재고 부족으로 생산 중단 위험. 커버리지: 17.7%,False
+ALT-246,A3,생산 라인 스톱 위험,CRITICAL,2025-03-22,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,True
+ALT-247,A3,생산 라인 스톱 위험,CRITICAL,2025-04-09,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-248,A3,생산 라인 스톱 위험,CRITICAL,2025-04-18,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 14.4%,False
+ALT-249,A3,생산 라인 스톱 위험,CRITICAL,2025-04-17,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,True
+ALT-250,A3,생산 라인 스톱 위험,CRITICAL,2025-03-20,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 7.5%,True
+ALT-251,A3,생산 라인 스톱 위험,CRITICAL,2025-04-04,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 16.2%,False
+ALT-252,A3,생산 라인 스톱 위험,CRITICAL,2025-03-19,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 13.5%,True
+ALT-253,A3,생산 라인 스톱 위험,CRITICAL,2025-05-02,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-254,A3,생산 라인 스톱 위험,CRITICAL,2025-04-07,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 8.3%,False
+ALT-255,A3,생산 라인 스톱 위험,CRITICAL,2025-04-13,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 9.8%,False
+ALT-256,A3,생산 라인 스톱 위험,CRITICAL,2025-04-01,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-257,A3,생산 라인 스톱 위험,CRITICAL,2025-04-20,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-258,A3,생산 라인 스톱 위험,CRITICAL,2025-04-21,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-259,A3,생산 라인 스톱 위험,CRITICAL,2025-04-14,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 4.0%,False
+ALT-260,A3,생산 라인 스톱 위험,CRITICAL,2025-03-23,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 20.5%,True
+ALT-261,A3,생산 라인 스톱 위험,CRITICAL,2025-05-03,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,True
+ALT-262,A3,생산 라인 스톱 위험,CRITICAL,2025-04-12,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 16.2%,False
+ALT-263,A3,생산 라인 스톱 위험,CRITICAL,2025-05-05,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,False
+ALT-264,A3,생산 라인 스톱 위험,CRITICAL,2025-03-15,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 11.3%,False
+ALT-265,A3,생산 라인 스톱 위험,CRITICAL,2025-04-15,RM-ALM-01,알루미늄 잉곳 (Aluminum Ingot) 재고 부족으로 생산 중단 위험. 커버리지: 0.0%,True
+ALT-266,A3,생산 라인 스톱 위험,CRITICAL,2025-04-02,RM-STL-01,열연강판 (Hot-Rolled Steel) 재고 부족으로 생산 중단 위험. 커버리지: 3.1%,False
+ALT-267,A3,생산 라인 스톱 위험,CRITICAL,2025-04-06,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 14.5%,True
+ALT-268,A3,생산 라인 스톱 위험,CRITICAL,2025-04-01,RM-STL-01,열연강판 (Hot-Rolled Steel) 재고 부족으로 생산 중단 위험. 커버리지: 9.1%,True
+ALT-269,A3,생산 라인 스톱 위험,CRITICAL,2025-04-26,RM-PLS-01,PE 수지 (Polyethylene) 재고 부족으로 생산 중단 위험. 커버리지: 12.2%,False
+ALT-270,A4,항만 체류 과다,MEDIUM,2025-02-20 00:18,SH-1003,선적 SH-1003 통관 48.5시간 소요. 원자재: 합성고무 (Synthetic Rubber),True
+ALT-271,A4,항만 체류 과다,MEDIUM,2025-02-20 10:10,SH-1004,선적 SH-1004 통관 48.6시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),True
+ALT-272,A4,항만 체류 과다,MEDIUM,2025-02-20 20:58,SH-1005,선적 SH-1005 통관 70.2시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-273,A4,항만 체류 과다,MEDIUM,2025-02-20 12:48,SH-1006,선적 SH-1006 통관 56.8시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-274,A4,항만 체류 과다,MEDIUM,2025-02-21 08:10,SH-1009,선적 SH-1009 통관 57.6시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-275,A4,항만 체류 과다,MEDIUM,2025-02-22 06:06,SH-1011,선적 SH-1011 통관 60.5시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-276,A4,항만 체류 과다,MEDIUM,2025-02-22 16:14,SH-1012,선적 SH-1012 통관 66.4시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-277,A4,항만 체류 과다,MEDIUM,2025-02-27 02:25,SH-1016,선적 SH-1016 통관 128.3시간 소요. 원자재: 전해동판 (Copper Cathode),False
+ALT-278,A4,항만 체류 과다,MEDIUM,2025-02-26 12:45,SH-1020,선적 SH-1020 통관 79.7시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-279,A4,항만 체류 과다,MEDIUM,2025-03-02 17:14,SH-1025,선적 SH-1025 통관 106.8시간 소요. 원자재: PE 수지 (Polyethylene),True
+ALT-280,A4,항만 체류 과다,MEDIUM,2025-03-02 02:22,SH-1029,선적 SH-1029 통관 69.9시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),True
+ALT-281,A4,항만 체류 과다,MEDIUM,2025-03-05 13:35,SH-1033,선적 SH-1033 통관 99.8시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),True
+ALT-282,A4,항만 체류 과다,MEDIUM,2025-03-10 01:25,SH-1041,선적 SH-1041 통관 119.0시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-283,A4,항만 체류 과다,MEDIUM,2025-03-07 15:35,SH-1042,선적 SH-1042 통관 64.0시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),True
+ALT-284,A4,항만 체류 과다,MEDIUM,2025-03-07 18:41,SH-1045,선적 SH-1045 통관 52.9시간 소요. 원자재: PE 수지 (Polyethylene),False
+ALT-285,A4,항만 체류 과다,MEDIUM,2025-03-10 17:57,SH-1050,선적 SH-1050 통관 68.0시간 소요. 원자재: 합성고무 (Synthetic Rubber),True
+ALT-286,A4,항만 체류 과다,MEDIUM,2025-03-10 18:10,SH-1051,선적 SH-1051 통관 61.7시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-287,A4,항만 체류 과다,MEDIUM,2025-03-13 10:46,SH-1053,선적 SH-1053 통관 100.8시간 소요. 원자재: PE 수지 (Polyethylene),False
+ALT-288,A4,항만 체류 과다,MEDIUM,2025-03-12 22:39,SH-1054,선적 SH-1054 통관 64.6시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),False
+ALT-289,A4,항만 체류 과다,MEDIUM,2025-03-12 20:28,SH-1056,선적 SH-1056 통관 53.9시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),True
+ALT-290,A4,항만 체류 과다,MEDIUM,2025-03-13 04:54,SH-1057,선적 SH-1057 통관 50.0시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),True
+ALT-291,A4,항만 체류 과다,MEDIUM,2025-03-18 20:47,SH-1063,선적 SH-1063 통관 59.4시간 소요. 원자재: BMS 모듈 (Battery Management),True
+ALT-292,A4,항만 체류 과다,MEDIUM,2025-03-18 02:53,SH-1064,선적 SH-1064 통관 48.5시간 소요. 원자재: BMS 모듈 (Battery Management),True
+ALT-293,A4,항만 체류 과다,MEDIUM,2025-03-18 10:15,SH-1068,선적 SH-1068 통관 67.9시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-294,A4,항만 체류 과다,MEDIUM,2025-03-19 09:40,SH-1070,선적 SH-1070 통관 68.0시간 소요. 원자재: 합성고무 (Synthetic Rubber),True
+ALT-295,A4,항만 체류 과다,MEDIUM,2025-03-22 12:28,SH-1074,선적 SH-1074 통관 65.6시간 소요. 원자재: BMS 모듈 (Battery Management),False
+ALT-296,A4,항만 체류 과다,MEDIUM,2025-03-20 19:15,SH-1075,선적 SH-1075 통관 57.3시간 소요. 원자재: PE 수지 (Polyethylene),True
+ALT-297,A4,항만 체류 과다,MEDIUM,2025-03-21 16:31,SH-1076,선적 SH-1076 통관 55.2시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-298,A4,항만 체류 과다,MEDIUM,2025-03-21 17:54,SH-1078,선적 SH-1078 통관 53.8시간 소요. 원자재: 합성고무 (Synthetic Rubber),True
+ALT-299,A4,항만 체류 과다,MEDIUM,2025-03-22 21:42,SH-1079,선적 SH-1079 통관 66.6시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),False
+ALT-300,A4,항만 체류 과다,MEDIUM,2025-03-26 09:14,SH-1082,선적 SH-1082 통관 121.7시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-301,A4,항만 체류 과다,MEDIUM,2025-03-24 08:48,SH-1084,선적 SH-1084 통관 58.5시간 소요. 원자재: PCB 기판 (Printed Circuit Board),False
+ALT-302,A4,항만 체류 과다,MEDIUM,2025-03-25 16:54,SH-1087,선적 SH-1087 통관 60.4시간 소요. 원자재: PE 수지 (Polyethylene),True
+ALT-303,A4,항만 체류 과다,MEDIUM,2025-03-27 16:31,SH-1090,선적 SH-1090 통관 60.0시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-304,A4,항만 체류 과다,MEDIUM,2025-03-28 11:50,SH-1091,선적 SH-1091 통관 66.0시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),True
+ALT-305,A4,항만 체류 과다,MEDIUM,2025-03-27 07:17,SH-1092,선적 SH-1092 통관 58.2시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),True
+ALT-306,A4,항만 체류 과다,MEDIUM,2025-03-28 15:02,SH-1093,선적 SH-1093 통관 58.3시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),True
+ALT-307,A4,항만 체류 과다,MEDIUM,2025-03-28 05:38,SH-1094,선적 SH-1094 통관 55.1시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-308,A4,항만 체류 과다,MEDIUM,2025-03-28 08:13,SH-1095,선적 SH-1095 통관 62.5시간 소요. 원자재: BMS 모듈 (Battery Management),True
+ALT-309,A4,항만 체류 과다,MEDIUM,2025-03-28 02:02,SH-1096,선적 SH-1096 통관 53.3시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),False
+ALT-310,A4,항만 체류 과다,MEDIUM,2025-03-28 14:39,SH-1098,선적 SH-1098 통관 50.2시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-311,A4,항만 체류 과다,MEDIUM,2025-03-30 08:09,SH-1106,선적 SH-1106 통관 48.8시간 소요. 원자재: PE 수지 (Polyethylene),True
+ALT-312,A4,항만 체류 과다,MEDIUM,2025-04-03 02:45,SH-1109,선적 SH-1109 통관 64.6시간 소요. 원자재: 합성고무 (Synthetic Rubber),True
+ALT-313,A4,항만 체류 과다,MEDIUM,2025-04-02 12:51,SH-1112,선적 SH-1112 통관 64.1시간 소요. 원자재: 전해동판 (Copper Cathode),False
+ALT-314,A4,항만 체류 과다,MEDIUM,2025-04-03 18:18,SH-1113,선적 SH-1113 통관 64.9시간 소요. 원자재: 전해동판 (Copper Cathode),False
+ALT-315,A4,항만 체류 과다,MEDIUM,2025-04-05 14:04,SH-1115,선적 SH-1115 통관 69.8시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-316,A4,항만 체류 과다,MEDIUM,2025-04-04 01:05,SH-1116,선적 SH-1116 통관 54.5시간 소요. 원자재: PE 수지 (Polyethylene),True
+ALT-317,A4,항만 체류 과다,MEDIUM,2025-04-05 01:05,SH-1117,선적 SH-1117 통관 83.1시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-318,A4,항만 체류 과다,MEDIUM,2025-04-05 20:20,SH-1119,선적 SH-1119 통관 68.6시간 소요. 원자재: PCB 기판 (Printed Circuit Board),False
+ALT-319,A4,항만 체류 과다,MEDIUM,2025-04-08 08:31,SH-1123,선적 SH-1123 통관 71.1시간 소요. 원자재: PCB 기판 (Printed Circuit Board),False
+ALT-320,A4,항만 체류 과다,MEDIUM,2025-04-08 18:46,SH-1124,선적 SH-1124 통관 117.4시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-321,A4,항만 체류 과다,MEDIUM,2025-04-09 04:31,SH-1127,선적 SH-1127 통관 68.8시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-322,A4,항만 체류 과다,MEDIUM,2025-04-07 20:18,SH-1128,선적 SH-1128 통관 50.6시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-323,A4,항만 체류 과다,MEDIUM,2025-04-08 18:15,SH-1130,선적 SH-1130 통관 51.0시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-324,A4,항만 체류 과다,MEDIUM,2025-04-09 10:57,SH-1131,선적 SH-1131 통관 62.8시간 소요. 원자재: 합성고무 (Synthetic Rubber),False
+ALT-325,A4,항만 체류 과다,MEDIUM,2025-04-12 19:02,SH-1135,선적 SH-1135 통관 65.0시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-326,A4,항만 체류 과다,MEDIUM,2025-04-11 22:47,SH-1138,선적 SH-1138 통관 68.0시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),True
+ALT-327,A4,항만 체류 과다,MEDIUM,2025-04-17 02:49,SH-1140,선적 SH-1140 통관 142.6시간 소요. 원자재: 리튬 (Lithium Carbonate),False
+ALT-328,A4,항만 체류 과다,MEDIUM,2025-04-15 10:10,SH-1142,선적 SH-1142 통관 51.5시간 소요. 원자재: PCB 기판 (Printed Circuit Board),False
+ALT-329,A4,항만 체류 과다,MEDIUM,2025-04-13 17:29,SH-1143,선적 SH-1143 통관 51.0시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),True
+ALT-330,A4,항만 체류 과다,MEDIUM,2025-04-13 23:56,SH-1144,선적 SH-1144 통관 50.9시간 소요. 원자재: 합성고무 (Synthetic Rubber),False
+ALT-331,A4,항만 체류 과다,MEDIUM,2025-04-14 21:06,SH-1146,선적 SH-1146 통관 60.8시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),True
+ALT-332,A4,항만 체류 과다,MEDIUM,2025-04-17 07:57,SH-1147,선적 SH-1147 통관 107.4시간 소요. 원자재: PE 수지 (Polyethylene),False
+ALT-333,A4,항만 체류 과다,MEDIUM,2025-04-17 08:09,SH-1148,선적 SH-1148 통관 49.0시간 소요. 원자재: BMS 모듈 (Battery Management),False
+ALT-334,A4,항만 체류 과다,MEDIUM,2025-04-17 23:40,SH-1149,선적 SH-1149 통관 61.4시간 소요. 원자재: BMS 모듈 (Battery Management),True
+ALT-335,A4,항만 체류 과다,MEDIUM,2025-04-16 19:56,SH-1150,선적 SH-1150 통관 69.8시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),False
+ALT-336,A4,항만 체류 과다,MEDIUM,2025-04-17 13:23,SH-1152,선적 SH-1152 통관 63.1시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),False
+ALT-337,A4,항만 체류 과다,MEDIUM,2025-04-17 07:02,SH-1153,선적 SH-1153 통관 50.7시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-338,A4,항만 체류 과다,MEDIUM,2025-04-18 16:50,SH-1157,선적 SH-1157 통관 52.2시간 소요. 원자재: PE 수지 (Polyethylene),True
+ALT-339,A4,항만 체류 과다,MEDIUM,2025-04-23 03:42,SH-1161,선적 SH-1161 통관 61.5시간 소요. 원자재: 리튬 (Lithium Carbonate),False
+ALT-340,A4,항만 체류 과다,MEDIUM,2025-04-22 05:04,SH-1162,선적 SH-1162 통관 67.8시간 소요. 원자재: BMS 모듈 (Battery Management),True
+ALT-341,A4,항만 체류 과다,MEDIUM,2025-04-21 03:04,SH-1163,선적 SH-1163 통관 66.4시간 소요. 원자재: 합성고무 (Synthetic Rubber),True
+ALT-342,A4,항만 체류 과다,MEDIUM,2025-04-24 08:30,SH-1164,선적 SH-1164 통관 65.9시간 소요. 원자재: PCB 기판 (Printed Circuit Board),False
+ALT-343,A4,항만 체류 과다,MEDIUM,2025-04-23 01:52,SH-1165,선적 SH-1165 통관 69.8시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),False
+ALT-344,A4,항만 체류 과다,MEDIUM,2025-04-22 01:36,SH-1166,선적 SH-1166 통관 48.2시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-345,A4,항만 체류 과다,MEDIUM,2025-04-22 20:19,SH-1167,선적 SH-1167 통관 71.0시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-346,A4,항만 체류 과다,MEDIUM,2025-04-23 15:53,SH-1170,선적 SH-1170 통관 49.1시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),True
+ALT-347,A4,항만 체류 과다,MEDIUM,2025-04-27 21:09,SH-1174,선적 SH-1174 통관 92.6시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),True
+ALT-348,A4,항만 체류 과다,MEDIUM,2025-04-27 00:25,SH-1175,선적 SH-1175 통관 58.5시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-349,A4,항만 체류 과다,MEDIUM,2025-04-26 11:05,SH-1177,선적 SH-1177 통관 50.6시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),False
+ALT-350,A4,항만 체류 과다,MEDIUM,2025-04-26 19:35,SH-1178,선적 SH-1178 통관 49.0시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-351,A4,항만 체류 과다,MEDIUM,2025-04-28 01:28,SH-1179,선적 SH-1179 통관 67.7시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-352,A4,항만 체류 과다,MEDIUM,2025-04-28 11:32,SH-1180,선적 SH-1180 통관 50.2시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-353,A4,항만 체류 과다,MEDIUM,2025-04-27 22:32,SH-1182,선적 SH-1182 통관 56.6시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),False
+ALT-354,A4,항만 체류 과다,MEDIUM,2025-04-27 10:45,SH-1184,선적 SH-1184 통관 49.0시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-355,A4,항만 체류 과다,MEDIUM,2025-04-29 16:22,SH-1185,선적 SH-1185 통관 57.5시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-356,A4,항만 체류 과다,MEDIUM,2025-04-30 03:19,SH-1186,선적 SH-1186 통관 65.2시간 소요. 원자재: BMS 모듈 (Battery Management),True
+ALT-357,A4,항만 체류 과다,MEDIUM,2025-05-01 11:52,SH-1188,선적 SH-1188 통관 64.7시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-358,A4,항만 체류 과다,MEDIUM,2025-05-02 20:45,SH-1189,선적 SH-1189 통관 116.0시간 소요. 원자재: PE 수지 (Polyethylene),True
+ALT-359,A4,항만 체류 과다,MEDIUM,2025-05-01 03:09,SH-1192,선적 SH-1192 통관 54.4시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-360,A4,항만 체류 과다,MEDIUM,2025-05-01 19:22,SH-1193,선적 SH-1193 통관 57.1시간 소요. 원자재: 알루미늄 잉곳 (Aluminum Ingot),True
+ALT-361,A4,항만 체류 과다,MEDIUM,2025-05-03 13:00,SH-1196,선적 SH-1196 통관 59.3시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-362,A4,항만 체류 과다,MEDIUM,2025-05-05 09:57,SH-1198,선적 SH-1198 통관 59.5시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),True
+ALT-363,A4,항만 체류 과다,MEDIUM,2025-05-05 07:19,SH-1202,선적 SH-1202 통관 59.9시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),True
+ALT-364,A4,항만 체류 과다,MEDIUM,2025-05-06 07:35,SH-1203,선적 SH-1203 통관 50.1시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-365,A4,항만 체류 과다,MEDIUM,2025-05-10 04:18,SH-1205,선적 SH-1205 통관 136.5시간 소요. 원자재: 열연강판 (Hot-Rolled Steel),True
+ALT-366,A4,항만 체류 과다,MEDIUM,2025-05-07 10:07,SH-1206,선적 SH-1206 통관 71.8시간 소요. 원자재: BMS 모듈 (Battery Management),True
+ALT-367,A4,항만 체류 과다,MEDIUM,2025-05-09 00:10,SH-1208,선적 SH-1208 통관 61.2시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-368,A4,항만 체류 과다,MEDIUM,2025-05-12 09:50,SH-1213,선적 SH-1213 통관 60.1시간 소요. 원자재: BMS 모듈 (Battery Management),False
+ALT-369,A4,항만 체류 과다,MEDIUM,2025-05-12 07:24,SH-1214,선적 SH-1214 통관 57.2시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-370,A4,항만 체류 과다,MEDIUM,2025-05-14 10:25,SH-1221,선적 SH-1221 통관 92.4시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-371,A4,항만 체류 과다,MEDIUM,2025-05-14 11:00,SH-1222,선적 SH-1222 통관 48.6시간 소요. 원자재: PCB 기판 (Printed Circuit Board),True
+ALT-372,A4,항만 체류 과다,MEDIUM,2025-05-14 15:07,SH-1225,선적 SH-1225 통관 48.5시간 소요. 원자재: 합성고무 (Synthetic Rubber),False
+ALT-373,A4,항만 체류 과다,MEDIUM,2025-05-15 14:04,SH-1226,선적 SH-1226 통관 64.3시간 소요. 원자재: 리튬 (Lithium Carbonate),False
+ALT-374,A4,항만 체류 과다,MEDIUM,2025-05-17 07:24,SH-1230,선적 SH-1230 통관 63.1시간 소요. 원자재: 합성고무 (Synthetic Rubber),True
+ALT-375,A4,항만 체류 과다,MEDIUM,2025-05-20 22:14,SH-1232,선적 SH-1232 통관 129.6시간 소요. 원자재: 전해동판 (Copper Cathode),True
+ALT-376,A4,항만 체류 과다,MEDIUM,2025-05-19 01:15,SH-1233,선적 SH-1233 통관 52.6시간 소요. 원자재: 리튬 (Lithium Carbonate),True
+ALT-377,A5,출하 OTIF 리스크,HIGH,2025-03-01,ORD-5008,"주문 ORD-5008 출하 3일 지연. 고객: 기아자동차, 제품: 전기모터 (Electric Motor)",True
+ALT-378,A5,출하 OTIF 리스크,HIGH,2025-03-03,ORD-5021,"주문 ORD-5021 출하 5일 지연. 고객: 기아자동차, 제품: 충전기 (EV Charger)",True
+ALT-379,A5,출하 OTIF 리스크,MEDIUM,2025-03-01,ORD-5024,"주문 ORD-5024 출하 2일 지연. 고객: SK이노베이션, 제품: 충전기 (EV Charger)",False
+ALT-380,A5,출하 OTIF 리스크,MEDIUM,2025-03-03,ORD-5029,"주문 ORD-5029 출하 2일 지연. 고객: 수출(유럽), 제품: 인버터 (Inverter)",False
+ALT-381,A5,출하 OTIF 리스크,MEDIUM,2025-03-02,ORD-5034,"주문 ORD-5034 출하 2일 지연. 고객: 기아자동차, 제품: 전기모터 (Electric Motor)",False
+ALT-382,A5,출하 OTIF 리스크,MEDIUM,2025-02-25,ORD-5035,"주문 ORD-5035 출하 2일 지연. 고객: 현대자동차, 제품: 배터리 팩 (Battery Pack)",True
+ALT-383,A5,출하 OTIF 리스크,HIGH,2025-03-09,ORD-5074,"주문 ORD-5074 출하 5일 지연. 고객: 수출(유럽), 제품: 인버터 (Inverter)",False
+ALT-384,A5,출하 OTIF 리스크,MEDIUM,2025-03-13,ORD-5087,"주문 ORD-5087 출하 2일 지연. 고객: 기아자동차, 제품: 배터리 팩 (Battery Pack)",False
+ALT-385,A5,출하 OTIF 리스크,MEDIUM,2025-03-16,ORD-5089,"주문 ORD-5089 출하 2일 지연. 고객: 기아자동차, 제품: 전기모터 (Electric Motor)",True
+ALT-386,A5,출하 OTIF 리스크,MEDIUM,2025-03-10,ORD-5092,"주문 ORD-5092 출하 2일 지연. 고객: LG에너지솔루션, 제품: 배터리 팩 (Battery Pack)",True
+ALT-387,A5,출하 OTIF 리스크,MEDIUM,2025-03-12,ORD-5107,"주문 ORD-5107 출하 2일 지연. 고객: SK이노베이션, 제품: 전기모터 (Electric Motor)",True
+ALT-388,A5,출하 OTIF 리스크,HIGH,2025-03-18,ORD-5111,"주문 ORD-5111 출하 3일 지연. 고객: 삼성SDI, 제품: 인버터 (Inverter)",True
+ALT-389,A5,출하 OTIF 리스크,HIGH,2025-03-15,ORD-5118,"주문 ORD-5118 출하 5일 지연. 고객: 수출(북미), 제품: 인버터 (Inverter)",True
+ALT-390,A5,출하 OTIF 리스크,HIGH,2025-03-18,ORD-5120,"주문 ORD-5120 출하 3일 지연. 고객: 수출(북미), 제품: 인버터 (Inverter)",False
+ALT-391,A5,출하 OTIF 리스크,HIGH,2025-03-27,ORD-5149,"주문 ORD-5149 출하 3일 지연. 고객: LG에너지솔루션, 제품: 인버터 (Inverter)",True
+ALT-392,A5,출하 OTIF 리스크,MEDIUM,2025-03-30,ORD-5171,"주문 ORD-5171 출하 2일 지연. 고객: 수출(북미), 제품: 배터리 팩 (Battery Pack)",False
+ALT-393,A5,출하 OTIF 리스크,HIGH,2025-04-02,ORD-5199,"주문 ORD-5199 출하 3일 지연. 고객: LG에너지솔루션, 제품: 배터리 팩 (Battery Pack)",True
+ALT-394,A5,출하 OTIF 리스크,MEDIUM,2025-03-30,ORD-5212,"주문 ORD-5212 출하 2일 지연. 고객: 삼성SDI, 제품: 충전기 (EV Charger)",False
+ALT-395,A5,출하 OTIF 리스크,HIGH,2025-04-07,ORD-5213,"주문 ORD-5213 출하 5일 지연. 고객: 기아자동차, 제품: 배터리 팩 (Battery Pack)",True
+ALT-396,A5,출하 OTIF 리스크,MEDIUM,2025-04-07,ORD-5215,"주문 ORD-5215 출하 2일 지연. 고객: 수출(유럽), 제품: 인버터 (Inverter)",False
+ALT-397,A5,출하 OTIF 리스크,HIGH,2025-04-13,ORD-5246,"주문 ORD-5246 출하 3일 지연. 고객: 기아자동차, 제품: 배터리 팩 (Battery Pack)",True
+ALT-398,A5,출하 OTIF 리스크,HIGH,2025-04-14,ORD-5263,"주문 ORD-5263 출하 3일 지연. 고객: 삼성SDI, 제품: 인버터 (Inverter)",True
+ALT-399,A5,출하 OTIF 리스크,HIGH,2025-04-19,ORD-5276,"주문 ORD-5276 출하 3일 지연. 고객: SK이노베이션, 제품: 배터리 팩 (Battery Pack)",False
+ALT-400,A5,출하 OTIF 리스크,MEDIUM,2025-04-21,ORD-5311,"주문 ORD-5311 출하 2일 지연. 고객: 현대자동차, 제품: 인버터 (Inverter)",True
+ALT-401,A5,출하 OTIF 리스크,HIGH,2025-04-23,ORD-5329,"주문 ORD-5329 출하 3일 지연. 고객: 현대자동차, 제품: 전기모터 (Electric Motor)",False
+ALT-402,A5,출하 OTIF 리스크,MEDIUM,2025-04-24,ORD-5331,"주문 ORD-5331 출하 2일 지연. 고객: 수출(유럽), 제품: 배터리 팩 (Battery Pack)",False
+ALT-403,A5,출하 OTIF 리스크,HIGH,2025-04-30,ORD-5334,"주문 ORD-5334 출하 3일 지연. 고객: 수출(유럽), 제품: 충전기 (EV Charger)",True
+ALT-404,A5,출하 OTIF 리스크,MEDIUM,2025-04-26,ORD-5345,"주문 ORD-5345 출하 2일 지연. 고객: 기아자동차, 제품: 충전기 (EV Charger)",True
+ALT-405,A5,출하 OTIF 리스크,MEDIUM,2025-05-03,ORD-5355,"주문 ORD-5355 출하 2일 지연. 고객: 현대자동차, 제품: 배터리 팩 (Battery Pack)",False
+ALT-406,A5,출하 OTIF 리스크,MEDIUM,2025-05-02,ORD-5372,"주문 ORD-5372 출하 2일 지연. 고객: SK이노베이션, 제품: 인버터 (Inverter)",True
+ALT-407,A5,출하 OTIF 리스크,MEDIUM,2025-05-06,ORD-5384,"주문 ORD-5384 출하 2일 지연. 고객: 수출(유럽), 제품: 인버터 (Inverter)",False
+ALT-408,A5,출하 OTIF 리스크,MEDIUM,2025-05-13,ORD-5407,"주문 ORD-5407 출하 2일 지연. 고객: 기아자동차, 제품: 인버터 (Inverter)",False
+ALT-409,A5,출하 OTIF 리스크,HIGH,2025-05-14,ORD-5420,"주문 ORD-5420 출하 3일 지연. 고객: 기아자동차, 제품: 충전기 (EV Charger)",True
+ALT-410,A5,출하 OTIF 리스크,MEDIUM,2025-05-13,ORD-5444,"주문 ORD-5444 출하 2일 지연. 고객: 삼성SDI, 제품: 충전기 (EV Charger)",True
+ALT-411,A5,출하 OTIF 리스크,MEDIUM,2025-05-22,ORD-5469,"주문 ORD-5469 출하 2일 지연. 고객: 현대자동차, 제품: 전기모터 (Electric Motor)",False
+ALT-412,A5,출하 OTIF 리스크,HIGH,2025-05-27,ORD-5483,"주문 ORD-5483 출하 3일 지연. 고객: 삼성SDI, 제품: 전기모터 (Electric Motor)",True
+ALT-413,A5,출하 OTIF 리스크,MEDIUM,2025-05-26,ORD-5484,"주문 ORD-5484 출하 2일 지연. 고객: LG에너지솔루션, 제품: 충전기 (EV Charger)",True
+ALT-414,A5,출하 OTIF 리스크,HIGH,2025-05-25,ORD-5490,"주문 ORD-5490 출하 5일 지연. 고객: 기아자동차, 제품: 인버터 (Inverter)",True

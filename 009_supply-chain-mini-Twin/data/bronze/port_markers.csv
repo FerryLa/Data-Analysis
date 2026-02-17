@@ -1,0 +1,10 @@
+﻿port_code,port_name,country,latitude,longitude,port_type,marker_size
+CNSHA,상하이항 (Shanghai),CN,31.2304,121.4737,origin,20
+CNQDG,칭다오항 (Qingdao),CN,36.0671,120.3826,origin,20
+CNNBO,닝보항 (Ningbo),CN,29.8683,121.544,origin,20
+CNTSN,톈진항 (Tianjin),CN,39.0842,117.201,origin,20
+CNDLC,다롄항 (Dalian),CN,38.914,121.6147,origin,20
+JPTYO,도쿄항 (Tokyo),JP,35.6532,139.7965,origin,20
+VNHPH,하이퐁항 (Hai Phong),VN,20.8449,106.6881,origin,20
+KRGUN,군산항 (Gunsan),KR,35.99,126.713,destination,30
+KRSMG,새만금항 (Saemangeum),KR,35.82,126.67,destination,30

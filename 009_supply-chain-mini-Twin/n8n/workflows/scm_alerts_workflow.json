@@ -1,0 +1,160 @@
+{
+  "name": "SCM 5대 알림 자동화",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{"field": "minutes", "minutesInterval": 30}]
+        }
+      },
+      "id": "trigger",
+      "name": "30분 간격 트리거",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT alert_id, alert_type, alert_name, severity, timestamp, reference_id, message FROM v_active_alerts WHERE severity IN ('CRITICAL', 'HIGH') LIMIT 20",
+        "options": {}
+      },
+      "id": "check-alerts",
+      "name": "A1-A5: 활성 알림 조회",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [250, 300],
+      "credentials": {
+        "postgres": {
+          "id": "scm-postgres",
+          "name": "SCM PostgreSQL"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true},
+          "conditions": [
+            {
+              "leftValue": "={{ $json.alert_type }}",
+              "rightValue": "A1",
+              "operator": {"type": "string", "operation": "equals"}
+            }
+          ]
+        }
+      },
+      "id": "route-a1",
+      "name": "A1: ETA 지연",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [500, 100]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true},
+          "conditions": [
+            {
+              "leftValue": "={{ $json.alert_type }}",
+              "rightValue": "A2",
+              "operator": {"type": "string", "operation": "equals"}
+            }
+          ]
+        }
+      },
+      "id": "route-a2",
+      "name": "A2: 재고 부족",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [500, 250]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true},
+          "conditions": [
+            {
+              "leftValue": "={{ $json.alert_type }}",
+              "rightValue": "A3",
+              "operator": {"type": "string", "operation": "equals"}
+            }
+          ]
+        }
+      },
+      "id": "route-a3",
+      "name": "A3: 라인 스톱",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [500, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true},
+          "conditions": [
+            {
+              "leftValue": "={{ $json.severity }}",
+              "rightValue": "CRITICAL",
+              "operator": {"type": "string", "operation": "equals"}
+            }
+          ]
+        }
+      },
+      "id": "severity-check",
+      "name": "CRITICAL 판별",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [750, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.WEBHOOK_URL || 'https://hooks.slack.com/services/placeholder'}}",
+        "method": "POST",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "=🚨 [SCM ALERT - {{ $json.severity }}]\n유형: {{ $json.alert_name }}\n{{ $json.message }}\nRef: {{ $json.reference_id }}"
+            }
+          ]
+        }
+      },
+      "id": "notify-slack",
+      "name": "Slack/Webhook 알림",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1000, 300]
+    }
+  ],
+  "connections": {
+    "30분 간격 트리거": {
+      "main": [[{"node": "A1-A5: 활성 알림 조회", "type": "main", "index": 0}]]
+    },
+    "A1-A5: 활성 알림 조회": {
+      "main": [[
+        {"node": "A1: ETA 지연", "type": "main", "index": 0},
+        {"node": "A2: 재고 부족", "type": "main", "index": 0},
+        {"node": "A3: 라인 스톱", "type": "main", "index": 0}
+      ]]
+    },
+    "A1: ETA 지연": {
+      "main": [[{"node": "CRITICAL 판별", "type": "main", "index": 0}], []]
+    },
+    "A2: 재고 부족": {
+      "main": [[{"node": "CRITICAL 판별", "type": "main", "index": 0}], []]
+    },
+    "A3: 라인 스톱": {
+      "main": [[{"node": "CRITICAL 판별", "type": "main", "index": 0}], []]
+    },
+    "CRITICAL 판별": {
+      "main": [[{"node": "Slack/Webhook 알림", "type": "main", "index": 0}], []]
+    }
+  },
+  "settings": {
+    "timezone": "Asia/Seoul",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  }
+}
