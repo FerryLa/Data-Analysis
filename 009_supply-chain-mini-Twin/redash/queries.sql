@@ -218,3 +218,174 @@ SELECT
 FROM alert_events
 GROUP BY alert_type, alert_name
 ORDER BY alert_type;
+
+
+-- ============================================================
+-- [Dashboard 4] 디지털 트윈 - 선박 실시간 추적
+-- (ship_tracking + weather_data 기반)
+-- ============================================================
+
+-- Q4-1: 현재 운항 중인 선박 위치 + 기상 등급
+SELECT
+    vessel_name                         AS "선박명",
+    vessel_type                         AS "선종",
+    flag                                AS "국적",
+    ROUND(latitude::numeric, 4)         AS "위도",
+    ROUND(longitude::numeric, 4)        AS "경도",
+    speed_kn                            AS "속력(kn)",
+    course_deg                          AS "방위각",
+    nav_status                          AS "항행상태",
+    origin_port                         AS "출발항",
+    destination_name                    AS "목적항",
+    to_char(eta_utc, 'MM/DD HH24:MI')   AS "AIS_ETA",
+    dist_to_dest_nm                     AS "잔여거리(nm)",
+    voyage_progress_pct                 AS "진행률(%)",
+    nearest_nav_safety                  AS "인근기상",
+    to_char(timestamp_utc AT TIME ZONE 'Asia/Seoul', 'HH24:MI') AS "최종수신"
+FROM v_ship_positions
+ORDER BY voyage_progress_pct DESC;
+
+-- Q4-2: AIS ETA vs 시뮬레이션 ETA 비교 (디지털 트윈 핵심 뷰)
+SELECT
+    vessel_name                         AS "선박명",
+    port_name                           AS "입항항",
+    voyage_progress_pct                 AS "진행률(%)",
+    dist_to_dest_nm                     AS "잔여거리(nm)",
+    to_char(ais_eta, 'MM/DD HH24:MI')   AS "AIS_ETA(신고)",
+    to_char(sim_eta, 'MM/DD HH24:MI')   AS "SimPy_ETA(예측)",
+    ROUND(EXTRACT(EPOCH FROM (sim_eta - ais_eta)) / 3600, 1)
+                                        AS "오차(시간)",
+    ROUND(berth_wait_min / 60.0, 1)     AS "선석대기(hr)",
+    ROUND(unload_min / 60.0, 1)         AS "하역(hr)",
+    ROUND(customs_min / 60.0, 1)        AS "통관(hr)",
+    throughput_teu                      AS "처리량(TEU)",
+    throughput_ton                      AS "처리량(톤)",
+    ROUND(crane_utilization, 1)         AS "크레인가동률(%)",
+    weather_nav_safety                  AS "기상등급",
+    ROUND(delay_factor, 2)              AS "날씨지연배율",
+    eta_status                          AS "ETA상태"
+FROM v_port_eta
+ORDER BY voyage_progress_pct DESC;
+
+-- Q4-3: 서해 기상 현황 (관측 포인트별)
+SELECT
+    point_name                          AS "관측지점",
+    wind_speed_kn                       AS "풍속(kn)",
+    wind_speed_ms                       AS "풍속(m/s)",
+    CASE
+        WHEN wind_direction_deg BETWEEN 292.5 AND 360   THEN 'NW (북서)'
+        WHEN wind_direction_deg BETWEEN 0     AND  67.5 THEN 'N (북)'
+        WHEN wind_direction_deg BETWEEN 67.5  AND 157.5 THEN 'E (동)'
+        WHEN wind_direction_deg BETWEEN 157.5 AND 247.5 THEN 'S (남)'
+        ELSE 'W (서)'
+    END                                 AS "풍향",
+    wave_height_m                       AS "파고(m)",
+    wave_period_s                       AS "파주기(s)",
+    tidal_current_kn                    AS "조류유속(kn)",
+    water_temp_c                        AS "해수온(°C)",
+    visibility_km                       AS "가시거리(km)",
+    CASE nav_safety
+        WHEN 'DANGER'  THEN '🔴 위험'
+        WHEN 'CAUTION' THEN '🟡 주의'
+        ELSE '🟢 안전'
+    END                                 AS "항행안전"
+FROM weather_data
+WHERE timestamp_utc = (SELECT MAX(timestamp_utc) FROM weather_data)
+ORDER BY point_name;
+
+-- Q4-4: 기상 시계열 (최근 24시간 풍속/파고 추이)
+SELECT
+    date_trunc('hour', timestamp_utc AT TIME ZONE 'Asia/Seoul')
+                                        AS "시각(KST)",
+    ROUND(AVG(wind_speed_kn), 1)        AS "평균풍속(kn)",
+    ROUND(MAX(wind_speed_kn), 1)        AS "최대풍속(kn)",
+    ROUND(AVG(wave_height_m), 2)        AS "평균파고(m)",
+    ROUND(MAX(wave_height_m), 2)        AS "최대파고(m)",
+    ROUND(AVG(tidal_current_kn), 2)     AS "평균조류(kn)",
+    COUNT(DISTINCT point_id)            AS "관측포인트수"
+FROM weather_data
+WHERE timestamp_utc >= NOW() - INTERVAL '24 hours'
+GROUP BY date_trunc('hour', timestamp_utc AT TIME ZONE 'Asia/Seoul')
+ORDER BY "시각(KST)";
+
+
+-- ============================================================
+-- [Dashboard 5] 디지털 트윈 - 시뮬레이션 KPI
+-- (simulation_results 기반)
+-- ============================================================
+
+-- Q5-1: 항만별 일별 처리량 KPI
+SELECT
+    sim_date                            AS "날짜",
+    port_name                           AS "항만",
+    vessel_count                        AS "처리선박수",
+    total_teu                           AS "TEU처리량",
+    total_ton                           AS "톤처리량",
+    avg_berth_wait_hr                   AS "평균선석대기(hr)",
+    avg_unload_hr                       AS "평균하역(hr)",
+    avg_customs_hr                      AS "평균통관(hr)",
+    avg_total_port_hr                   AS "평균항만체류(hr)",
+    avg_crane_util_pct                  AS "크레인가동률(%)",
+    avg_delay_factor                    AS "날씨지연배율",
+    weather_danger_cnt                  AS "기상위험건수",
+    weather_caution_cnt                 AS "기상주의건수"
+FROM v_sim_kpi
+ORDER BY sim_date DESC, port_name;
+
+-- Q5-2: 선박별 상세 시뮬레이션 결과
+SELECT
+    sr.sim_run_dt::date                 AS "시뮬일",
+    sr.port_name                        AS "항만",
+    sr.vessel_name                      AS "선박명",
+    sr.vessel_type                      AS "선종",
+    sr.cargo_type                       AS "화물유형",
+    sr.cargo_qty                        AS "화물량",
+    sr.cargo_unit                       AS "단위",
+    to_char(sr.eta_planned, 'MM/DD HH24:MI')  AS "ETA계획",
+    to_char(sr.eta_actual,  'MM/DD HH24:MI')  AS "ETA예측",
+    ROUND(sr.berth_wait_min / 60.0, 1) AS "선석대기(hr)",
+    ROUND(sr.unload_min / 60.0, 1)     AS "하역(hr)",
+    ROUND(sr.customs_min / 60.0, 1)    AS "통관(hr)",
+    ROUND(sr.total_port_min / 60.0, 1) AS "총체류(hr)",
+    NULLIF(sr.throughput_teu, 0)        AS "TEU",
+    NULLIF(sr.throughput_ton, 0)        AS "처리톤",
+    sr.crane_utilization                AS "크레인가동률(%)",
+    sr.weather_nav_safety               AS "기상등급",
+    sr.delay_factor                     AS "지연배율"
+FROM simulation_results sr
+ORDER BY sr.sim_run_dt DESC, sr.port_id, sr.berth_wait_min DESC
+LIMIT 200;
+
+-- Q5-3: 통합 디지털 트윈 현황판 (단일 행 KPI)
+SELECT
+    underway_count                      AS "운항중선박",
+    moored_count                        AS "접안중선박",
+    today_teu                           AS "금일TEU처리",
+    today_ton                           AS "금일톤처리",
+    COALESCE(avg_berth_wait_hr, 0)      AS "평균선석대기(hr)",
+    CASE current_weather
+        WHEN 'DANGER'  THEN '🔴 위험'
+        WHEN 'CAUTION' THEN '🟡 주의'
+        ELSE '🟢 안전'
+    END                                 AS "현재기상",
+    COALESCE(avg_wind_kn, 0)            AS "평균풍속(kn)",
+    COALESCE(avg_wave_m, 0)             AS "평균파고(m)",
+    COALESCE(delayed_vessel_count, 0)   AS "지연예상선박",
+    COALESCE(avg_crane_util_pct, 0)     AS "크레인가동률(%)"
+FROM v_twin_dashboard;
+
+-- Q5-4: 선박 유형별 처리 효율 비교
+SELECT
+    vessel_type                         AS "선종",
+    cargo_type                          AS "화물유형",
+    COUNT(*)                            AS "처리선박수",
+    ROUND(AVG(berth_wait_min) / 60.0, 1) AS "평균선석대기(hr)",
+    ROUND(AVG(unload_min) / 60.0, 1)    AS "평균하역(hr)",
+    ROUND(AVG(customs_min) / 60.0, 1)   AS "평균통관(hr)",
+    ROUND(AVG(total_port_min) / 60.0, 1) AS "평균체류(hr)",
+    ROUND(AVG(crane_utilization), 1)    AS "평균크레인가동률(%)",
+    SUM(throughput_teu)                 AS "TEU합계",
+    SUM(throughput_ton)                 AS "톤합계"
+FROM simulation_results
+GROUP BY vessel_type, cargo_type
+ORDER BY "평균체류(hr)" DESC;

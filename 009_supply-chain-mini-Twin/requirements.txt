@@ -1,0 +1,15 @@
+# 009 Supply Chain Mini-Twin - Python 의존성
+# pip install -r requirements.txt
+
+# 데이터 처리
+pandas>=2.0
+numpy>=1.24
+
+# DB 연결
+psycopg2-binary>=2.9
+
+# 시뮬레이션
+simpy>=4.1
+
+# 환경변수 (선택)
+python-dotenv>=1.0

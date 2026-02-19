@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서해안 벌크선 AIS 추적 | West Sea Bulk Tracker</title>
+
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+<style>
+/* ── 기본 ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #37A8A4;
+  --panel:    #1e5f5c;
+  --border:   #145450;
+  --accent:   #7DF9F0;
+  --accent2:  #5ee8e0;
+  --green:    #86efac;
+  --yellow:   #fde68a;
+  --red:      #fca5a5;
+  --text:     #ffffff;
+  --muted:    #cffaf8;
+  --header-h: 56px;
+  --panel-w:  320px;
+}
+
+html, body {
+  height: 100%; overflow: hidden;
+  background: var(--bg); color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── 헤더 ────────────────────────────────────────────── */
+#header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: var(--header-h);
+  background: rgba(20,60,57,.97);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 20px; padding: 0 20px;
+  backdrop-filter: blur(8px);
+}
+#header h1 {
+  font-size: 15px; font-weight: 700; color: var(--accent);
+  white-space: nowrap; letter-spacing: .04em;
+}
+#header h1 span { color: var(--muted); font-weight: 400; font-size: 13px; }
+
+/* KPI 카드 */
+.kpi-bar { display: flex; gap: 8px; flex: 1; overflow: hidden; }
+.kpi {
+  background: rgba(18,55,52,.8); border: 1px solid var(--border);
+  border-radius: 8px; padding: 5px 13px;
+  display: flex; flex-direction: column; min-width: 105px;
+}
+.kpi-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.kpi-value { font-size: 18px; font-weight: 700; line-height: 1.25; }
+.kpi-unit  { font-size: 10px; color: var(--muted); }
+.kv-cyan   { color: var(--accent); }
+.kv-green  { color: var(--green); }
+.kv-yellow { color: var(--yellow); }
+.kv-red    { color: var(--red); }
+#last-update { font-size: 10px; color: var(--muted); white-space: nowrap; }
+
+/* ── 레이아웃 ─────────────────────────────────────────── */
+#layout {
+  position: fixed;
+  top: var(--header-h); bottom: 0; left: 0; right: 0;
+  display: flex;
+}
+
+/* 지도 */
+#map-wrap { flex: 1; position: relative; }
+#map      { width: 100%; height: 100%; }
+
+/* 범례 */
+#legend {
+  position: absolute; bottom: 16px; left: 16px; z-index: 10;
+  background: rgba(18,55,52,.93); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px; font-size: 11px;
+  backdrop-filter: blur(6px); color: var(--text);
+}
+#legend h4 { color: var(--muted); margin-bottom: 7px; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
+.leg { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+.leg-ship { font-size: 15px; }
+.leg-line { width: 24px; height: 3px; border-radius: 2px; }
+
+/* 툴팁 */
+#tooltip {
+  position: absolute; z-index: 300; pointer-events: none;
+  background: rgba(18,55,52,.97); border: 1px solid var(--accent);
+  border-radius: 10px; padding: 12px 16px; font-size: 12px;
+  min-width: 210px; display: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5);
+  color: var(--text);
+}
+#tooltip h3 { font-size: 13px; color: var(--accent); margin-bottom: 8px; }
+.tip-row { display: flex; justify-content: space-between; gap: 16px; margin: 3px 0; }
+.tip-label { color: var(--muted); }
+.tip-val   { font-weight: 600; }
+
+/* 선박 마커 스타일 */
+.ship-marker {
+  cursor: pointer;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.6));
+  transition: transform .15s, filter .15s;
+}
+.ship-marker:hover {
+  filter: drop-shadow(0 0 8px rgba(125,249,240,.9)) drop-shadow(0 2px 4px rgba(0,0,0,.6));
+  transform: scale(1.25) !important;
+}
+.ship-marker.selected {
+  filter: drop-shadow(0 0 10px rgba(125,249,240,1)) drop-shadow(0 2px 4px rgba(0,0,0,.6));
+}
+/* 항구 마커 */
+.port-marker { cursor: default; }
+.port-label {
+  background: rgba(18,55,52,.88);
+  color: var(--text); font-size: 11px; font-weight: 600;
+  padding: 2px 7px; border-radius: 4px;
+  border: 1px solid var(--border);
+  white-space: nowrap; pointer-events: none;
+}
+.port-label.dest { color: var(--yellow); border-color: var(--yellow); }
+.port-label.origin { color: var(--accent); border-color: var(--accent); }
+
+/* ── 우측 패널 ────────────────────────────────────────── */
+#side-panel {
+  width: var(--panel-w);
+  background: var(--panel);
+  border-left: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.panel-section { border-bottom: 1px solid var(--border); padding: 13px 15px; }
+.panel-title {
+  font-size: 10px; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--muted); margin-bottom: 10px;
+}
+
+/* 날씨 카드 */
+.wx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.wx-card {
+  background: rgba(18,55,52,.65); border: 1px solid var(--border);
+  border-radius: 8px; padding: 9px 11px;
+}
+.wx-icon  { font-size: 17px; }
+.wx-lbl   { font-size: 10px; color: var(--muted); margin-top: 1px; }
+.wx-val   { font-size: 20px; font-weight: 700; color: var(--text); }
+.wx-unit  { font-size: 10px; color: var(--muted); }
+
+/* 안전 배지 */
+.safety-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 12px; font-weight: 700; margin-top: 8px;
+}
+.safe    { background: rgba(22,101,52,.7);  color: var(--green);  border: 1px solid rgba(134,239,172,.5); }
+.caution { background: rgba(120,53,15,.7);  color: var(--yellow); border: 1px solid rgba(253,230,138,.5); }
+.danger  { background: rgba(127,29,29,.7);  color: var(--red);    border: 1px solid rgba(252,165,165,.5); }
+
+/* 관측 포인트 목록 */
+.wx-pt {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 5px 0; border-bottom: 1px solid var(--border); font-size: 12px;
+}
+.wx-pt:last-child { border-bottom: none; }
+.wx-pt-vals { display: flex; gap: 9px; color: var(--muted); font-size: 11px; }
+.wx-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-right: 5px; }
+
+/* 선박 목록 */
+.panel-sub-title { padding: 13px 15px 0; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+#vessel-list { flex: 1; overflow-y: auto; }
+#vessel-list::-webkit-scrollbar { width: 4px; }
+#vessel-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.vi {
+  padding: 10px 15px; border-bottom: 1px solid var(--border);
+  cursor: pointer; transition: background .15s;
+}
+.vi:hover   { background: rgba(125,249,240,.08); }
+.vi.active  { background: rgba(125,249,240,.16); border-left: 3px solid var(--accent); }
+.vi-top     { display: flex; justify-content: space-between; align-items: baseline; }
+.vi-name    { font-size: 12px; font-weight: 600; color: var(--text); }
+.vi-status  { font-size: 10px; font-weight: 700; }
+.vi-cargo   { font-size: 11px; color: var(--muted); margin: 3px 0 5px; }
+.vi-bar-bg  { height: 4px; background: var(--border); border-radius: 2px; }
+.vi-bar     { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+.vi-meta    { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header id="header">
+  <h1>⚓ 서해안 벌크선 AIS <span>/ West Sea Bulk Tracker</span></h1>
+  <div class="kpi-bar">
+    <div class="kpi"><span class="kpi-label">운항중</span><span class="kpi-value kv-cyan"  id="kv-underway">—</span><span class="kpi-unit">척</span></div>
+    <div class="kpi"><span class="kpi-label">총 화물</span><span class="kpi-value kv-green" id="kv-ton">—</span><span class="kpi-unit">톤</span></div>
+    <div class="kpi"><span class="kpi-label">평균속력</span><span class="kpi-value kv-cyan"  id="kv-speed">—</span><span class="kpi-unit">kn</span></div>
+    <div class="kpi"><span class="kpi-label">평균풍속</span><span class="kpi-value kv-yellow" id="kv-wind">—</span><span class="kpi-unit">kn</span></div>
+    <div class="kpi"><span class="kpi-label">평균파고</span><span class="kpi-value kv-yellow" id="kv-wave">—</span><span class="kpi-unit">m</span></div>
+    <div class="kpi"><span class="kpi-label">기상등급</span><span class="kpi-value" id="kv-safety">—</span></div>
+  </div>
+  <span id="last-update"></span>
+</header>
+
+<div id="layout">
+
+  <!-- 지도 -->
+  <div id="map-wrap">
+    <div id="map"></div>
+
+    <!-- 범례 -->
+    <div id="legend">
+      <h4>범례</h4>
+      <div class="leg"><span class="leg-ship">🟠</span> 항해중 벌크선</div>
+      <div class="leg"><span class="leg-ship">🟢</span> 접안중 선박</div>
+      <div class="leg"><span class="leg-ship">🔵</span> 출발항 (중국)</div>
+      <div class="leg"><span class="leg-ship">🟡</span> 도착항 (서해안)</div>
+      <div class="leg"><div class="leg-line" style="background:linear-gradient(90deg,#3b82f6,#06b6d4)"></div> 항로</div>
+      <div class="leg"><div class="leg-line" style="background:#94a3b8; opacity:.7"></div> 항적</div>
+    </div>
+
+    <!-- 툴팁 -->
+    <div id="tooltip"></div>
+  </div>
+
+  <!-- 우측 패널 -->
+  <aside id="side-panel">
+
+    <!-- 날씨 요약 -->
+    <div class="panel-section">
+      <div class="panel-title">🌊 서해 기상 현황</div>
+      <div class="wx-grid">
+        <div class="wx-card">
+          <div class="wx-icon">🌬️</div>
+          <div class="wx-lbl">평균 풍속</div>
+          <div><span class="wx-val" id="wx-wind">—</span><span class="wx-unit"> kn</span></div>
+        </div>
+        <div class="wx-card">
+          <div class="wx-icon">🌊</div>
+          <div class="wx-lbl">평균 파고</div>
+          <div><span class="wx-val" id="wx-wave">—</span><span class="wx-unit"> m</span></div>
+        </div>
+        <div class="wx-card">
+          <div class="wx-icon">↗️</div>
+          <div class="wx-lbl">평균 조류</div>
+          <div><span class="wx-val" id="wx-curr">—</span><span class="wx-unit"> kn</span></div>
+        </div>
+        <div class="wx-card">
+          <div class="wx-icon">🌡️</div>
+          <div class="wx-lbl">해수온</div>
+          <div><span class="wx-val" id="wx-temp">—</span><span class="wx-unit"> °C</span></div>
+        </div>
+      </div>
+      <div id="safety-badge" class="safety-badge safe">🟢 항행 안전</div>
+    </div>
+
+    <!-- 관측 포인트 -->
+    <div class="panel-section">
+      <div class="panel-title">📡 관측 포인트</div>
+      <div id="wx-points"></div>
+    </div>
+
+    <!-- 선박 목록 -->
+    <div class="panel-sub-title">🚢 운항 선박</div>
+    <div id="vessel-list"></div>
+
+  </aside>
+</div>
+
+<script src="data.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════
+// 데이터
+// ═══════════════════════════════════════════════════════
+const D = DASHBOARD_DATA;
+
+// 선박 상태를 실시간으로 갱신할 배열 (애니메이션용)
+const vessels = D.vessels.map(v => ({ ...v }));
+
+// ═══════════════════════════════════════════════════════
+// MapLibre 지도 초기화
+// ═══════════════════════════════════════════════════════
+const map = new maplibregl.Map({
+  container: 'map',
+  style: {
+    version: 8,
+    sources: {
+      osm: {
+        type: 'raster',
+        tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+        tileSize: 256,
+        attribution: '© OpenStreetMap',
+      }
+    },
+    layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
+  },
+  center: [124.0, 35.5],
+  zoom: 5.8,
+  minZoom: 4,
+  maxZoom: 13,
+});
+
+// ═══════════════════════════════════════════════════════
+// 항로 선 (GeoJSON → MapLibre Layer)
+// ═══════════════════════════════════════════════════════
+map.on('load', () => {
+
+  // 항로 데이터 (routes의 웨이포인트 전체 사용)
+  const routeFeatures = D.routes.map((r, i) => ({
+    type: 'Feature',
+    properties: { color: `rgb(${r.color.join(',')})`, origin: r.origin, dest: r.dest },
+    geometry: {
+      type: 'LineString',
+      // generate_data.py의 ROUTES에서 waypoints를 data.js에 추가 필요
+      // 없으면 직선으로 대체
+      coordinates: [[r.src_lon, r.src_lat], [r.dst_lon, r.dst_lat]]
+    }
+  }));
+
+  map.addSource('routes', {
+    type: 'geojson',
+    data: { type: 'FeatureCollection', features: routeFeatures }
+  });
+
+  // 항로 외곽선 (두껍고 반투명)
+  map.addLayer({
+    id: 'routes-glow',
+    type: 'line',
+    source: 'routes',
+    paint: {
+      'line-color': ['get', 'color'],
+      'line-width': 6,
+      'line-opacity': 0.18,
+      'line-blur': 4,
+    }
+  });
+  // 항로 본선
+  map.addLayer({
+    id: 'routes-line',
+    type: 'line',
+    source: 'routes',
+    paint: {
+      'line-color': ['get', 'color'],
+      'line-width': 1.8,
+      'line-opacity': 0.75,
+      'line-dasharray': [4, 2],
+    }
+  });
+
+  // ─ 항구 마커 & 레이블 추가
+  D.ports.forEach(p => {
+    const el = document.createElement('div');
+    el.className = 'port-marker';
+    el.innerHTML = p.is_dest ? '🟡' : '🔵';
+    el.style.cssText = 'font-size:18px; cursor:default;';
+
+    new maplibregl.Marker({ element: el, anchor: 'center' })
+      .setLngLat([p.lon, p.lat])
+      .addTo(map);
+
+    const lbl = document.createElement('div');
+    lbl.className = `port-label ${p.is_dest ? 'dest' : 'origin'}`;
+    lbl.textContent = p.name;
+
+    new maplibregl.Marker({ element: lbl, anchor: 'top', offset: [0, 10] })
+      .setLngLat([p.lon, p.lat])
+      .addTo(map);
+  });
+
+  // ─ 항적 (trail) — GeoJSON LineString
+  const trailFeatures = vessels.map(v => ({
+    type: 'Feature',
+    properties: { id: v.id },
+    geometry: { type: 'LineString', coordinates: v.trail }
+  }));
+
+  map.addSource('trails', {
+    type: 'geojson',
+    data: { type: 'FeatureCollection', features: trailFeatures }
+  });
+  map.addLayer({
+    id: 'trails-layer',
+    type: 'line',
+    source: 'trails',
+    paint: {
+      'line-color': '#94a3b8',
+      'line-width': 1.5,
+      'line-opacity': 0.5,
+      'line-dasharray': [2, 3],
+    }
+  });
+
+  // ─ 선박 마커 초기 배치
+  initShipMarkers();
+
+  // ─ KPI / 날씨 / 선박목록 렌더
+  renderKPI();
+  renderWeather();
+  renderVesselList();
+
+  // ─ 30초마다 선박 위치 업데이트 (애니메이션)
+  setInterval(animateVessels, 30000);
+});
+
+// ═══════════════════════════════════════════════════════
+// 선박 마커 (SVG 이미지, 방향 회전)
+// ═══════════════════════════════════════════════════════
+const shipMarkers = {};   // id → maplibregl.Marker
+let   selectedId  = null;
+
+function makeShipEl(v) {
+  const wrap = document.createElement('div');
+  wrap.className = 'ship-marker';
+  wrap.id = `ship-el-${v.id}`;
+
+  // SVG 인라인 — 벌크선 모형 (방위각으로 회전)
+  const isDockeD = v.status === '접안중';
+  const bodyColor  = isDockeD ? '#22c55e' : '#f97316';
+  const bowColor   = isDockeD ? '#bbf7d0' : '#fed7aa';
+  const deckColor  = isDockeD ? '#bbf7d0' : '#fed7aa';
+  const size = 36;
+
+  wrap.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 64 64" width="${size}" height="${size}"
+         style="display:block; transform: rotate(${v.course_deg}deg); transform-origin: 50% 50%;">
+      <!-- 선체 -->
+      <polygon points="32,3 50,20 50,54 14,54 14,20"
+               fill="${bodyColor}" stroke="#ffffff" stroke-width="2.5"/>
+      <!-- 뱃머리 -->
+      <polygon points="32,3 42,18 22,18"
+               fill="${bowColor}" opacity="0.75"/>
+      <!-- 선교 -->
+      <rect x="22" y="29" width="20" height="12" rx="2"
+            fill="#1e3a5f" stroke="#7dd3fc" stroke-width="1.5"/>
+      <!-- 굴뚝 -->
+      <rect x="28" y="19" width="8" height="11" rx="1.5"
+            fill="#374151" stroke="#9ca3af" stroke-width="1"/>
+      <!-- 갑판 해치선 -->
+      <line x1="18" y1="43" x2="46" y2="43" stroke="${deckColor}" stroke-width="1" opacity="0.55"/>
+      <line x1="18" y1="48" x2="46" y2="48" stroke="${deckColor}" stroke-width="1" opacity="0.55"/>
+    </svg>`;
+
+  // hover → 툴팁
+  wrap.addEventListener('mouseenter', e => showTooltip(v, e));
+  wrap.addEventListener('mouseleave',  hideTooltip);
+  // click → 선박 목록 하이라이트 + 지도 이동
+  wrap.addEventListener('click', () => selectVessel(v.id));
+
+  return wrap;
+}
+
+function initShipMarkers() {
+  vessels.forEach(v => {
+    const el = makeShipEl(v);
+    const mk = new maplibregl.Marker({ element: el, anchor: 'center' })
+      .setLngLat([v.lon, v.lat])
+      .addTo(map);
+    shipMarkers[v.id] = mk;
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// 툴팁
+// ═══════════════════════════════════════════════════════
+function showTooltip(v, e) {
+  const tip = document.getElementById('tooltip');
+  const rect = document.getElementById('map-wrap').getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  tip.innerHTML = `
+    <h3>🚢 ${v.name}</h3>
+    <div class="tip-row"><span class="tip-label">IMO</span><span class="tip-val">${v.imo}</span></div>
+    <div class="tip-row"><span class="tip-label">화물</span><span class="tip-val">${v.cargo} ${v.qty_ton.toLocaleString()}톤</span></div>
+    <div class="tip-row"><span class="tip-label">출발</span><span class="tip-val">${v.origin}</span></div>
+    <div class="tip-row"><span class="tip-label">목적항</span><span class="tip-val">${v.dest}</span></div>
+    <div class="tip-row"><span class="tip-label">속력</span><span class="tip-val">${v.speed_kn} kn</span></div>
+    <div class="tip-row"><span class="tip-label">방위각</span><span class="tip-val">${v.course_deg}°</span></div>
+    <div class="tip-row"><span class="tip-label">잔여거리</span><span class="tip-val">${v.dist_nm} nm</span></div>
+    <div class="tip-row"><span class="tip-label">진행률</span><span class="tip-val">${v.progress}%</span></div>
+    <div class="tip-row"><span class="tip-label">ETA</span>
+      <span class="tip-val" style="color:var(--accent)">${v.eta} UTC</span></div>
+    <div class="tip-row"><span class="tip-label">상태</span>
+      <span class="tip-val" style="color:${v.status==='접안중'?'var(--green)':'var(--yellow)'}">${v.status}</span></div>`;
+
+  // 툴팁이 오른쪽 밖으로 나가면 왼쪽으로
+  const tipW = 220;
+  tip.style.left = (x + tipW + 20 > rect.width ? x - tipW - 14 : x + 14) + 'px';
+  tip.style.top  = Math.max(0, y - 10) + 'px';
+  tip.style.display = 'block';
+}
+
+function hideTooltip() {
+  document.getElementById('tooltip').style.display = 'none';
+}
+
+// ═══════════════════════════════════════════════════════
+// 선박 선택
+// ═══════════════════════════════════════════════════════
+function selectVessel(id) {
+  // 이전 선택 해제
+  if (selectedId) {
+    document.getElementById(`ship-el-${selectedId}`)?.classList.remove('selected');
+  }
+  selectedId = id;
+  document.getElementById(`ship-el-${id}`)?.classList.add('selected');
+
+  const v = vessels.find(x => x.id === id);
+  if (v) {
+    map.flyTo({ center: [v.lon, v.lat], zoom: Math.max(map.getZoom(), 7.5), duration: 800 });
+    highlightVI(id);
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// 선박 위치 애니메이션 (30초마다 전진)
+// ═══════════════════════════════════════════════════════
+function animateVessels() {
+  vessels.forEach(v => {
+    if (v.status !== '항해중') return;
+
+    // 30초 동안 이동 거리 (nm → 도 변환, 대략 1nm ≈ 1/60도)
+    const distNm  = (v.speed_kn * 30) / 3600;   // nm
+    const brg_rad = v.course_deg * Math.PI / 180;
+
+    v.lon = parseFloat((v.lon + Math.sin(brg_rad) * distNm / 60).toFixed(5));
+    v.lat = parseFloat((v.lat + Math.cos(brg_rad) * distNm / 60).toFixed(5));
+
+    // 마커 위치 업데이트
+    shipMarkers[v.id]?.setLngLat([v.lon, v.lat]);
+
+    // 항적 업데이트
+    const src = map.getSource('trails');
+    if (src) {
+      const data = src._data || { type:'FeatureCollection', features:[] };
+      const feat = data.features.find(f => f.properties.id === v.id);
+      if (feat) {
+        feat.geometry.coordinates.push([v.lon, v.lat]);
+        // 항적 최대 20포인트 유지
+        if (feat.geometry.coordinates.length > 20)
+          feat.geometry.coordinates.shift();
+        src.setData(data);
+      }
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// KPI 헤더
+// ═══════════════════════════════════════════════════════
+function renderKPI() {
+  const k = D.kpi;
+  document.getElementById('kv-underway').textContent = k.underway;
+  document.getElementById('kv-ton').textContent      = k.total_ton;
+  document.getElementById('kv-speed').textContent    = k.avg_speed_kn;
+  document.getElementById('kv-wind').textContent     = k.wind_kn;
+  document.getElementById('kv-wave').textContent     = k.wave_m;
+
+  const safeEl = document.getElementById('kv-safety');
+  const safeMap = { SAFE:['🟢 안전','kv-green'], CAUTION:['🟡 주의','kv-yellow'], DANGER:['🔴 위험','kv-red'] };
+  const [txt, cls] = safeMap[k.safety] || ['—',''];
+  safeEl.textContent = txt; safeEl.className = 'kpi-value ' + cls;
+  document.getElementById('last-update').textContent = '업데이트 ' + k.updated;
+}
+
+// ═══════════════════════════════════════════════════════
+// 날씨 패널
+// ═══════════════════════════════════════════════════════
+function renderWeather() {
+  const s = D.weather.summary;
+  document.getElementById('wx-wind').textContent = s.avg_wind_kn;
+  document.getElementById('wx-wave').textContent = s.avg_wave_m;
+  document.getElementById('wx-curr').textContent = s.avg_current_kn;
+
+  const avgTemp = (D.weather.points.reduce((a,p) => a+p.water_temp, 0) / D.weather.points.length).toFixed(1);
+  document.getElementById('wx-temp').textContent = avgTemp;
+
+  const badge = document.getElementById('safety-badge');
+  const bMap = { SAFE:['🟢 항행 안전','safe'], CAUTION:['🟡 주의 구역','caution'], DANGER:['🔴 위험 구역','danger'] };
+  const [bt, bc] = bMap[s.overall_safety] || ['—','safe'];
+  badge.textContent = bt; badge.className = 'safety-badge ' + bc;
+
+  const safeColor = { SAFE:'#86efac', CAUTION:'#fde68a', DANGER:'#fca5a5' };
+  document.getElementById('wx-points').innerHTML = D.weather.points.map(p => `
+    <div class="wx-pt">
+      <div style="display:flex;align-items:center">
+        <div class="wx-dot" style="background:${safeColor[p.safety]}"></div>
+        <span style="color:var(--text)">${p.name}</span>
+      </div>
+      <div class="wx-pt-vals">
+        <span>💨 ${p.wind_kn}kn</span>
+        <span>🌊 ${p.wave_m}m</span>
+      </div>
+    </div>`).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+// 선박 목록
+// ═══════════════════════════════════════════════════════
+function renderVesselList() {
+  document.getElementById('vessel-list').innerHTML = vessels.map(v => `
+    <div class="vi" id="vi-${v.id}" onclick="selectVessel('${v.id}')">
+      <div class="vi-top">
+        <span class="vi-name">${v.name}</span>
+        <span class="vi-status" style="color:${v.status==='접안중'?'var(--green)':'var(--yellow)'}">${v.status}</span>
+      </div>
+      <div class="vi-cargo">${v.origin} → ${v.dest} · ${v.cargo} ${v.qty_ton.toLocaleString()}톤</div>
+      <div class="vi-bar-bg"><div class="vi-bar" style="width:${v.progress}%"></div></div>
+      <div class="vi-meta">
+        <span>진행률 ${v.progress}% · ${v.dist_nm}nm 남음</span>
+        <span>ETA ${v.eta}</span>
+      </div>
+    </div>`).join('');
+}
+
+function highlightVI(id) {
+  document.querySelectorAll('.vi').forEach(el => el.classList.remove('active'));
+  const el = document.getElementById('vi-' + id);
+  if (el) { el.classList.add('active'); el.scrollIntoView({ behavior:'smooth', block:'nearest' }); }
+}
+</script>
+</body>
+</html>
